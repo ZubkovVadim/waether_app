@@ -16,6 +16,13 @@
 		EFC4D145278DD53500AF7C50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D144278DD53500AF7C50 /* Moya */; };
 		EFC4D148278DD5F700AF7C50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D147278DD5F700AF7C50 /* Realm */; };
 		EFC4D14A278DD5F700AF7C50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D149278DD5F700AF7C50 /* RealmSwift */; };
+		EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D150278DD8B200AF7C50 /* OnboardingViewController.swift */; };
+		EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D153278DD91000AF7C50 /* MainViewController.swift */; };
+		EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */; };
+		EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D15A278DDCC400AF7C50 /* ModulesFactory.swift */; };
+		EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D15E278DE29A00AF7C50 /* MainViewPresenter.swift */; };
+		EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */; };
+		EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,13 @@
 		EFC4D138278DD38200AF7C50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFC4D13B278DD38200AF7C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFC4D13D278DD38200AF7C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFC4D150278DD8B200AF7C50 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		EFC4D153278DD91000AF7C50 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EFC4D15A278DDCC400AF7C50 /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
+		EFC4D15E278DE29A00AF7C50 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerInput.swift; sourceTree = "<group>"; };
+		EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,10 @@
 		EFC4D12E278DD38000AF7C50 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4D159278DDCB600AF7C50 /* Factories */,
+				EFC4D155278DDC6600AF7C50 /* Helpers */,
+				EFC4D14D278DD88400AF7C50 /* Services */,
+				EFC4D14C278DD87E00AF7C50 /* Modules */,
 				EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */,
 				EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */,
 				EFC4D133278DD38000AF7C50 /* ViewController.swift */,
@@ -71,6 +89,89 @@
 				EFC4D13D278DD38200AF7C50 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		EFC4D14C278DD87E00AF7C50 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D152278DD90100AF7C50 /* Main */,
+				EFC4D14E278DD88E00AF7C50 /* Onboarding */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EFC4D14D278DD88400AF7C50 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EFC4D14E278DD88E00AF7C50 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D14F278DD8A200AF7C50 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EFC4D14F278DD8A200AF7C50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D150278DD8B200AF7C50 /* OnboardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFC4D152278DD90100AF7C50 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D160278DE2A800AF7C50 /* Interface */,
+				EFC4D15D278DE28F00AF7C50 /* View */,
+				EFC4D15C278DE28900AF7C50 /* Presenter */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EFC4D155278DDC6600AF7C50 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EFC4D159278DDCB600AF7C50 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D15A278DDCC400AF7C50 /* ModulesFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		EFC4D15C278DE28900AF7C50 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D15E278DE29A00AF7C50 /* MainViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EFC4D15D278DE28F00AF7C50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D153278DD91000AF7C50 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFC4D160278DE2A800AF7C50 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */,
+				EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
+				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
+				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
+				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
+				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
+				EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */,
+				EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
