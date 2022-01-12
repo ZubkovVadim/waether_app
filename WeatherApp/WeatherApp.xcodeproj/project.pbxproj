@@ -23,6 +23,9 @@
 		EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D15E278DE29A00AF7C50 /* MainViewPresenter.swift */; };
 		EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */; };
 		EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */; };
+		EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16A278F1D8800AF7C50 /* OnboardingViewPresenter.swift */; };
+		EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16D278F1DCA00AF7C50 /* OnboardingViewInput.swift */; };
+		EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16F278F1DD500AF7C50 /* OnboardingViewOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		EFC4D15E278DE29A00AF7C50 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerInput.swift; sourceTree = "<group>"; };
 		EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerOutput.swift; sourceTree = "<group>"; };
+		EFC4D16A278F1D8800AF7C50 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
+		EFC4D16D278F1DCA00AF7C50 /* OnboardingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewInput.swift; sourceTree = "<group>"; };
+		EFC4D16F278F1DD500AF7C50 /* OnboardingViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,8 @@
 		EFC4D14E278DD88E00AF7C50 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4D16C278F1D9E00AF7C50 /* Interface */,
+				EFC4D169278F1D7A00AF7C50 /* Presenter */,
 				EFC4D14F278DD8A200AF7C50 /* View */,
 			);
 			path = Onboarding;
@@ -170,6 +178,23 @@
 			children = (
 				EFC4D161278DE2E600AF7C50 /* MainViewControllerInput.swift */,
 				EFC4D163278DE2EE00AF7C50 /* MainViewControllerOutput.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		EFC4D169278F1D7A00AF7C50 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D16A278F1D8800AF7C50 /* OnboardingViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EFC4D16C278F1D9E00AF7C50 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D16D278F1DCA00AF7C50 /* OnboardingViewInput.swift */,
+				EFC4D16F278F1DD500AF7C50 /* OnboardingViewOutput.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -254,15 +279,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
+				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
 				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
 				EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */,
+				EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */,
 				EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
