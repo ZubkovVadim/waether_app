@@ -6,20 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 class MainViewPresenter {
     weak var view: MainViewControllerInput?
-    
-    init() {}
-    
-    func getData() {
-        // ..
-        view?.reload()
+
+    init() {
     }
 }
 
 extension MainViewPresenter: MainViewControllerOutput {
-    func tapButton() {
-        
+    func viewDidLoad() {
     }
+}
+
+extension MainViewPresenter {
+
 }

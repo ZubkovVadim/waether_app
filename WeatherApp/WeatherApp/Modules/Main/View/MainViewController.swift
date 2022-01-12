@@ -9,17 +9,25 @@ import Foundation
 import UIKit
 
 class MainViewController: BaseViewController {
-    private let output: MainViewControllerOutput
+    private let presenter: MainViewControllerOutput
     
     init(presenter: MainViewControllerOutput) {
-        output = presenter
+        self.presenter = presenter
 
         super.init()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+        
+        view.backgroundColor = .white
     }
 }
 
 extension MainViewController: MainViewControllerInput {
-    func reload() {
-        // reload table
+    func presentOnboardingModule() {
+        let module = Assembly.modulesFactory.onboardingModule()
+        present(module, animated: true)
     }
 }

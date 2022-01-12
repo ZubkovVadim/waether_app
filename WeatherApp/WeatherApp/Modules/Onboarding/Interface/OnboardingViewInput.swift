@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol OnboardingViewInput {
+protocol OnboardingViewInput: AnyObject {
     
 }

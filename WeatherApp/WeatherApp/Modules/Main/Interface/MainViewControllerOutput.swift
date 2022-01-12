@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MainViewControllerOutput: AnyObject {
-    func tapButton()
+    func viewDidLoad()
 }

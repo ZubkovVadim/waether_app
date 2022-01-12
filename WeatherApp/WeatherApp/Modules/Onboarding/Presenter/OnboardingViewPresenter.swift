@@ -5,22 +5,37 @@
 //  Created by Sergey Balashov on 12.01.2022.
 //
 
-import Foundation
+import CoreLocation
 
 class OnboardingViewPresenter {
-    weak var view: MainViewControllerInput?
+    weak var view: OnboardingViewInput?
     
-    init() {}
+    private let locationManager: LocationManaging
+    private let storageService: StorageServing
     
-    func getData() {
-        // ..
-        view?.reload()
+    init(
+        locationManager: LocationManaging,
+        storageService: StorageServing
+    ) {
+        self.locationManager = locationManager
+        self.storageService = storageService
     }
 }
 
-extension OnboardingViewPresenter: MainViewControllerOutput {
-    func tapButton() {
-        
+extension OnboardingViewPresenter: OnboardingViewOutput {
+    func reqeustLocationButton() {
+        locationManager.requestLocationPermission()
+        storageService.locationDidRequested()
+    }
+}
+
+extension OnboardingViewPresenter: LocationManagerOutput {
+    func didUpdateLocation(location: CLLocation) {
+        print(location.description)
+    }
+    
+    func didUpdatePermission(status: CLAuthorizationStatus) {
+        print(status)
     }
 }
 

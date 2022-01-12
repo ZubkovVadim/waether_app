@@ -26,6 +26,10 @@
 		EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16A278F1D8800AF7C50 /* OnboardingViewPresenter.swift */; };
 		EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16D278F1DCA00AF7C50 /* OnboardingViewInput.swift */; };
 		EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D16F278F1DD500AF7C50 /* OnboardingViewOutput.swift */; };
+		EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D171278F1FD200AF7C50 /* LocationManager.swift */; };
+		EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D174278F22F900AF7C50 /* Assembly.swift */; };
+		EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */; };
+		EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		EFC4D16A278F1D8800AF7C50 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		EFC4D16D278F1DCA00AF7C50 /* OnboardingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewInput.swift; sourceTree = "<group>"; };
 		EFC4D16F278F1DD500AF7C50 /* OnboardingViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewOutput.swift; sourceTree = "<group>"; };
+		EFC4D171278F1FD200AF7C50 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EFC4D174278F22F900AF7C50 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
+		EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		EFC4D12E278DD38000AF7C50 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4D173278F22EC00AF7C50 /* Assembly */,
 				EFC4D159278DDCB600AF7C50 /* Factories */,
 				EFC4D155278DDC6600AF7C50 /* Helpers */,
 				EFC4D14D278DD88400AF7C50 /* Services */,
@@ -100,6 +109,7 @@
 		EFC4D14C278DD87E00AF7C50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4D176278F269900AF7C50 /* Root */,
 				EFC4D152278DD90100AF7C50 /* Main */,
 				EFC4D14E278DD88E00AF7C50 /* Onboarding */,
 			);
@@ -109,6 +119,8 @@
 		EFC4D14D278DD88400AF7C50 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4D171278F1FD200AF7C50 /* LocationManager.swift */,
+				EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +211,46 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		EFC4D173278F22EC00AF7C50 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D174278F22F900AF7C50 /* Assembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		EFC4D176278F269900AF7C50 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D179278F26A700AF7C50 /* Interface */,
+				EFC4D178278F26A400AF7C50 /* View */,
+				EFC4D177278F269F00AF7C50 /* Presenter */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		EFC4D177278F269F00AF7C50 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EFC4D178278F26A400AF7C50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFC4D179278F26A700AF7C50 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,15 +331,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
+				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
+				EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */,
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
+				EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */,
 				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
 				EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */,
 				EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */,

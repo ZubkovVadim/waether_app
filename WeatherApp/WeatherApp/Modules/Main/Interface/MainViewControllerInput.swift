@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MainViewControllerInput: AnyObject {
-    func reload()
+    func presentOnboardingModule()
 }
