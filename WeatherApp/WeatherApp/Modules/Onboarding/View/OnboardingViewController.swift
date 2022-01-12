@@ -7,11 +7,16 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
-    private let viewModel: OnboardingViewModel
+class OnboardingViewController: BaseViewController {
+    private let output: OnboardingViewOutput
     
-    init(viewModel: OnboardingViewModel) {
-        
+    init(presenter: OnboardingViewOutput) {
+        output = presenter
+
+        super.init()
     }
+}
+
+extension OnboardingViewController: OnboardingViewInput {
     
 }
