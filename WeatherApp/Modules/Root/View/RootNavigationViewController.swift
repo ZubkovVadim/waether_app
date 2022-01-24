@@ -40,38 +40,4 @@ extension RootNavigationViewController: RootNavigationViewInput {
     }
 }
 
-protocol RootNavigationViewOutput {
-    func viewDidLoad()
-}
-
-protocol RootNavigationViewInput: AnyObject {
-    func startMain()
-    func startOnboarding()
-}
-
-class RootNavigationViewPresenter {
-    weak var view: RootNavigationViewInput?
-    
-    private let storageService: StorageServing
-    
-    init(storageService: StorageServing) {
-        self.storageService = storageService
-    }
-}
-
-extension RootNavigationViewPresenter: RootNavigationViewOutput {
-    func viewDidLoad() {
-        if storageService.isLocationDidRequest() {
-            view?.startMain()
-        } else {
-            view?.startOnboarding()
-        }
-    }
-}
-
-extension RootNavigationViewPresenter: LocationManagerOutput {
-    func didUpdateLocation(location: CLLocation) {}
-    func didUpdatePermission(status: CLAuthorizationStatus) {}
-}
-
 

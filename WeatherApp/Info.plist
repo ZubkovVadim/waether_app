@@ -6,8 +6,6 @@
 	<array>
 		<string>Rubik-Regular.ttf</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Разрешите геопозацию что мы узнали где вы</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

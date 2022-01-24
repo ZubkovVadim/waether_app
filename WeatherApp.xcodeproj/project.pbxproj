@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */; };
+		EF4C0AFD279F119600C33A2A /* RootNavigationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */; };
+		EF4C0AFF279F11A500C33A2A /* RootNavigationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */; };
+		EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */; };
+		EF4C0B05279F121300C33A2A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B04279F121300C33A2A /* Moya */; };
+		EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B06279F121300C33A2A /* RealmSwift */; };
+		EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B09279F136F00C33A2A /* ColorPallete.swift */; };
+		EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */; };
+		EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B0D279F207600C33A2A /* RealmStorage.swift */; };
 		EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */; };
 		EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */; };
 		EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D133278DD38000AF7C50 /* ViewController.swift */; };
 		EFC4D137278DD38100AF7C50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC4D135278DD38000AF7C50 /* Main.storyboard */; };
 		EFC4D139278DD38200AF7C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFC4D138278DD38200AF7C50 /* Assets.xcassets */; };
 		EFC4D13C278DD38200AF7C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC4D13A278DD38200AF7C50 /* LaunchScreen.storyboard */; };
-		EFC4D145278DD53500AF7C50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D144278DD53500AF7C50 /* Moya */; };
-		EFC4D148278DD5F700AF7C50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D147278DD5F700AF7C50 /* Realm */; };
-		EFC4D14A278DD5F700AF7C50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFC4D149278DD5F700AF7C50 /* RealmSwift */; };
 		EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D150278DD8B200AF7C50 /* OnboardingViewController.swift */; };
 		EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D153278DD91000AF7C50 /* MainViewController.swift */; };
 		EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */; };
@@ -35,6 +40,12 @@
 
 /* Begin PBXFileReference section */
 		DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootNavigationViewOutput.swift; path = ../../../../../sbermarket_ios/Styleguide/Views/OrderViews/HoldingStatusView/RootNavigationViewOutput.swift; sourceTree = "<group>"; };
+		EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootNavigationViewInput.swift; path = ../../../../../sbermarket_ios/Styleguide/Views/OrderViews/HoldingStatusView/RootNavigationViewInput.swift; sourceTree = "<group>"; };
+		EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewPresenter.swift; sourceTree = "<group>"; };
+		EF4C0B09279F136F00C33A2A /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderService.swift; sourceTree = "<group>"; };
+		EF4C0B0D279F207600C33A2A /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		EFC4D12C278DD38000AF7C50 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,20 +75,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFC4D14A278DD5F700AF7C50 /* RealmSwift in Frameworks */,
-				EFC4D148278DD5F700AF7C50 /* Realm in Frameworks */,
-				EFC4D145278DD53500AF7C50 /* Moya in Frameworks */,
+				EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */,
+				EF4C0B05279F121300C33A2A /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF4C0AFA279F118400C33A2A /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */,
+				EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		EF4C0B00279F11B700C33A2A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EF4C0B03279F121300C33A2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF4C0B08279F135300C33A2A /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C0B09279F136F00C33A2A /* ColorPallete.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		EFC4D123278DD38000AF7C50 = {
 			isa = PBXGroup;
 			children = (
 				EFC4D12E278DD38000AF7C50 /* WeatherApp */,
 				EFC4D12D278DD38000AF7C50 /* Products */,
+				EF4C0B03279F121300C33A2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +135,7 @@
 		EFC4D12E278DD38000AF7C50 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				EF4C0B08279F135300C33A2A /* Appearance */,
 				EFC4D173278F22EC00AF7C50 /* Assembly */,
 				EFC4D159278DDCB600AF7C50 /* Factories */,
 				EFC4D155278DDC6600AF7C50 /* Helpers */,
@@ -124,6 +168,8 @@
 			children = (
 				EFC4D171278F1FD200AF7C50 /* LocationManager.swift */,
 				EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */,
+				EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */,
+				EF4C0B0D279F207600C33A2A /* RealmStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -225,18 +271,11 @@
 		EFC4D176278F269900AF7C50 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				EFC4D179278F26A700AF7C50 /* Interface */,
+				EF4C0B00279F11B700C33A2A /* Presenter */,
+				EF4C0AFA279F118400C33A2A /* Interface */,
 				EFC4D178278F26A400AF7C50 /* View */,
-				EFC4D177278F269F00AF7C50 /* Presenter */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		EFC4D177278F269F00AF7C50 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		EFC4D178278F26A400AF7C50 /* View */ = {
@@ -245,13 +284,6 @@
 				EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EFC4D179278F26A700AF7C50 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,9 +303,8 @@
 			);
 			name = WeatherApp;
 			packageProductDependencies = (
-				EFC4D144278DD53500AF7C50 /* Moya */,
-				EFC4D147278DD5F700AF7C50 /* Realm */,
-				EFC4D149278DD5F700AF7C50 /* RealmSwift */,
+				EF4C0B04279F121300C33A2A /* Moya */,
+				EF4C0B06279F121300C33A2A /* RealmSwift */,
 			);
 			productName = WeatherApp;
 			productReference = EFC4D12C278DD38000AF7C50 /* WeatherApp.app */;
@@ -335,20 +366,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
 				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
+				EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
+				EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */,
+				EF4C0AFD279F119600C33A2A /* RootNavigationViewOutput.swift in Sources */,
 				EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */,
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
 				EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */,
 				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
+				EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */,
+				EF4C0AFF279F11A500C33A2A /* RootNavigationViewInput.swift in Sources */,
 				EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */,
 				EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */,
 				EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */,
@@ -503,6 +540,7 @@
 				DEVELOPMENT_TEAM = 6XNMN66Z79;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите геопозацию что мы узнали где вы";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -532,6 +570,7 @@
 				DEVELOPMENT_TEAM = 6XNMN66Z79;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите геопозацию что мы узнали где вы";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -594,17 +633,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EFC4D144278DD53500AF7C50 /* Moya */ = {
+		EF4C0B04279F121300C33A2A /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFC4D143278DD53500AF7C50 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		EFC4D147278DD5F700AF7C50 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EFC4D146278DD5F700AF7C50 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		EFC4D149278DD5F700AF7C50 /* RealmSwift */ = {
+		EF4C0B06279F121300C33A2A /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFC4D146278DD5F700AF7C50 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

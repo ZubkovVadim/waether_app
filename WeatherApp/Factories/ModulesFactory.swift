@@ -27,7 +27,10 @@ class ModulesFactory: ModulesFactoring {
     }
     
     func mainModule() -> MainViewController {
-        let presenter = MainViewPresenter()
+        let presenter = MainViewPresenter(
+            realmStorage: Assembly.realmStorage,
+            geocoderService: Assembly.geocoderService
+        )
         let view = MainViewController(presenter: presenter)
         
         presenter.view = view
@@ -40,7 +43,8 @@ class ModulesFactory: ModulesFactoring {
         
         let presenter = OnboardingViewPresenter(
             locationManager: locationManager,
-            storageService: Assembly.storageService
+            storageService: Assembly.storageService,
+            realmStorage: Assembly.realmStorage
         )
         
         let view = OnboardingViewController(presenter: presenter)

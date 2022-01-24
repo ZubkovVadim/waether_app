@@ -24,7 +24,7 @@ class OnboardingViewController: BaseViewController {
     }()
     private lazy var requestLocationButton: UIButton = {
         let view = UIButton(type: .system)
-        view.backgroundColor = UIColor(named: "orangeColor")
+        view.backgroundColor = .orangeColor
         view.layer.cornerRadius = 8
         view.setTitleColor(.white, for: .normal)
         view.addTarget(self, action: #selector(tapButtonRequest), for: .touchUpInside)
@@ -69,6 +69,7 @@ class OnboardingViewController: BaseViewController {
         label.text = "Разрешить приложению  Weather использовать данные о местоположении вашего устройства"
         return label
     }()
+
     private var onboardingTextLabal2: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -150,5 +151,11 @@ class OnboardingViewController: BaseViewController {
 }
 
 extension OnboardingViewController: OnboardingViewInput {
-    
+    func presentMain() {
+        guard let root = navigationController as? RootNavigationViewInput else {
+            return
+        }
+        
+        root.startMain()
+    }
 }

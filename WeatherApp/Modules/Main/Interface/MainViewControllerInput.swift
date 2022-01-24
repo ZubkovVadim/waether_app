@@ -8,5 +8,9 @@
 import Foundation
 
 protocol MainViewControllerInput: AnyObject {
+    // UpdateViews
+    func updateWeather()
+    
+    // Navigation
     func presentOnboardingModule()
 }

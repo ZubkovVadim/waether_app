@@ -21,11 +21,15 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .purple
     }
 }
 
 extension MainViewController: MainViewControllerInput {
+    func updateWeather() {
+        
+    }
+    
     func presentOnboardingModule() {
         let module = Assembly.modulesFactory.onboardingModule()
         present(module, animated: true)
