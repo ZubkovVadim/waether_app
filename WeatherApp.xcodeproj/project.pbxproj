@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */; };
-		EF4C0AFD279F119600C33A2A /* RootNavigationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */; };
-		EF4C0AFF279F11A500C33A2A /* RootNavigationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */; };
 		EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */; };
 		EF4C0B05279F121300C33A2A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B04279F121300C33A2A /* Moya */; };
 		EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B06279F121300C33A2A /* RealmSwift */; };
 		EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B09279F136F00C33A2A /* ColorPallete.swift */; };
 		EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */; };
 		EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B0D279F207600C33A2A /* RealmStorage.swift */; };
+		EF4C0B15279F333F00C33A2A /* RootNavigationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B14279F333F00C33A2A /* RootNavigationViewOutput.swift */; };
+		EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */; };
 		EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */; };
 		EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */; };
 		EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D133278DD38000AF7C50 /* ViewController.swift */; };
@@ -40,12 +40,12 @@
 
 /* Begin PBXFileReference section */
 		DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
-		EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootNavigationViewOutput.swift; path = ../../../../../sbermarket_ios/Styleguide/Views/OrderViews/HoldingStatusView/RootNavigationViewOutput.swift; sourceTree = "<group>"; };
-		EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootNavigationViewInput.swift; path = ../../../../../sbermarket_ios/Styleguide/Views/OrderViews/HoldingStatusView/RootNavigationViewInput.swift; sourceTree = "<group>"; };
 		EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewPresenter.swift; sourceTree = "<group>"; };
 		EF4C0B09279F136F00C33A2A /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderService.swift; sourceTree = "<group>"; };
 		EF4C0B0D279F207600C33A2A /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		EF4C0B14279F333F00C33A2A /* RootNavigationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewOutput.swift; sourceTree = "<group>"; };
+		EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewInput.swift; sourceTree = "<group>"; };
 		EFC4D12C278DD38000AF7C50 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,15 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EF4C0AFA279F118400C33A2A /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				EF4C0AFC279F119600C33A2A /* RootNavigationViewOutput.swift */,
-				EF4C0AFE279F11A500C33A2A /* RootNavigationViewInput.swift */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
 		EF4C0B00279F11B700C33A2A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +104,15 @@
 				EF4C0B09279F136F00C33A2A /* ColorPallete.swift */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		EF4C0B13279F333500C33A2A /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EF4C0B14279F333F00C33A2A /* RootNavigationViewOutput.swift */,
+				EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		EFC4D123278DD38000AF7C50 = {
@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				EF4C0B00279F11B700C33A2A /* Presenter */,
-				EF4C0AFA279F118400C33A2A /* Interface */,
+				EF4C0B13279F333500C33A2A /* Interface */,
 				EFC4D178278F26A400AF7C50 /* View */,
 			);
 			path = Root;
@@ -378,14 +378,14 @@
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
 				EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */,
-				EF4C0AFD279F119600C33A2A /* RootNavigationViewOutput.swift in Sources */,
 				EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */,
+				EF4C0B15279F333F00C33A2A /* RootNavigationViewOutput.swift in Sources */,
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
 				EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */,
+				EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */,
 				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
 				EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */,
-				EF4C0AFF279F11A500C33A2A /* RootNavigationViewInput.swift in Sources */,
 				EFC4D157278DDC6F00AF7C50 /* BaseViewController.swift in Sources */,
 				EFC4D16E278F1DCA00AF7C50 /* OnboardingViewInput.swift in Sources */,
 				EFC4D162278DE2E600AF7C50 /* MainViewControllerInput.swift in Sources */,
