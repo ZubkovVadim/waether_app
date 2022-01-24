@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */; };
 		EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */; };
 		EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */; };
 		EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D133278DD38000AF7C50 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		EFC4D12C278DD38000AF7C50 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				EFC4D138278DD38200AF7C50 /* Assets.xcassets */,
 				EFC4D13A278DD38200AF7C50 /* LaunchScreen.storyboard */,
 				EFC4D13D278DD38200AF7C50 /* Info.plist */,
+				DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC4D13C278DD38200AF7C50 /* LaunchScreen.storyboard in Resources */,
+				DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */,
 				EFC4D139278DD38200AF7C50 /* Assets.xcassets in Resources */,
 				EFC4D137278DD38100AF7C50 /* Main.storyboard in Resources */,
 			);
