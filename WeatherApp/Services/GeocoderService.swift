@@ -9,9 +9,6 @@ import CoreLocation
 import Moya
 import QuartzCore
 
-// Provider
-// TargetType
-
 enum Errors: Error {
     case masterRealised
     case nonJsonObject
@@ -89,7 +86,6 @@ class GeocoderService {
 extension GeocoderService: GeocoderServing {
     func getLocation(coordinate: CLLocationCoordinate2D,
                      completion: @escaping (Result<GeocoderResponse, Error>) -> Void) {
-
         provider.request(.getLocation(coordinate: coordinate)) { [weak self] result in
             switch result {
             case let .success(response):
