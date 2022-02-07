@@ -29,7 +29,8 @@ class ModulesFactory: ModulesFactoring {
     func mainModule() -> MainViewController {
         let presenter = MainViewPresenter(
             realmStorage: Assembly.realmStorage,
-            geocoderService: Assembly.geocoderService
+            geocoderService: Assembly.geocoderService,
+            weatherService: Assembly.weatherService
         )
         let view = MainViewController(presenter: presenter)
         

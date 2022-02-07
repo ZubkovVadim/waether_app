@@ -13,16 +13,28 @@ class MainViewPresenter {
 
     private let realmStorage: RealmStoraging
     private let geocoderService: GeocoderServing
+    private let weatherService: WeatherServing
     
     init(
         realmStorage: RealmStoraging,
-         geocoderService: GeocoderServing
+        geocoderService: GeocoderServing,
+        weatherService: WeatherServing
     ) {
         self.realmStorage = realmStorage
         self.geocoderService = geocoderService
+        self.weatherService = weatherService
     }
-    
-    private func getCityName() {
+}
+
+extension MainViewPresenter: MainViewControllerOutput {
+    func viewDidLoad() {
+//        getCityName()
+        getCurrentWeather()
+    }
+}
+
+private extension MainViewPresenter {
+    func getCityName() {
         guard let coordinate = realmStorage.getLocation() else {
             return
         }
@@ -31,17 +43,26 @@ class MainViewPresenter {
             switch result {
             case let .success(response):
                 print("cityName", response.cityName)
+                // TODO: Update view
                 
             case let .failure(error):
                 print("error", error)
             }
         }
-        
     }
-}
-
-extension MainViewPresenter: MainViewControllerOutput {
-    func viewDidLoad() {
-        getCityName()
+    
+    func getCurrentWeather() {
+        guard let coordinate = realmStorage.getLocation() else {
+            return
+        }
+        
+        weatherService.getCurrentWeather(coordinate: coordinate) { [weak view] result in
+            switch result {
+            case let .success(response):
+                view?.updateWeather(weather: response)
+            case let .failure(error):
+                print("error", error)
+            }
+        }
     }
 }

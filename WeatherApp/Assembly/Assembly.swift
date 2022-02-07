@@ -8,6 +8,10 @@
 import Foundation
 
 public enum Assembly {
+    static var weatherService: WeatherServing {
+        WeatherService()
+    }
+    
     static var storageService: StorageServing {
         StorageService()
     }
