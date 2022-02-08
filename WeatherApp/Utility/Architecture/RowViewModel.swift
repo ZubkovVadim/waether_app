@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RowViewModel {
-    associatedtype Cell: UITableViewCell
+    associatedtype Cell: IdentifiableView
 
     var cellType: Cell.Type { get }
 }

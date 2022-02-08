@@ -56,13 +56,27 @@ private extension MainViewPresenter {
             return
         }
 
-        weatherService.getCurrentWeather(coordinate: coordinate) { [weak view] result in
+        weatherService.getCurrentWeather(coordinate: coordinate) { [weak self] result in
             switch result {
             case let .success(response):
-                view?.updateWeather(weather: response)
+                self?.updateDataSource(response: response)
             case let .failure(error):
                 print("error", error)
             }
         }
+    }
+    
+    func updateDataSource(response: WeatherResponse) {
+        // подготовить dataSource для view
+        var dataSource: [MainViewController.DataType] = []
+        
+        // Наполнить dataSource
+        dataSource.append(.header(viewModel: buildHeaderMainCellViewModel(weather: response)))
+        
+        view?.updateWeather(dataSource: dataSource)
+    }
+    
+    func buildHeaderMainCellViewModel(weather: WeatherResponse) -> HeaderMainCellViewModel {
+        HeaderMainCellViewModel(cityName: weather.name, action: { })
     }
 }

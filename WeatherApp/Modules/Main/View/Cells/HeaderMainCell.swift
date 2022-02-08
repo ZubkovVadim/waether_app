@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class HeaderMainCellViewModel: RowViewModel {
     /// Для поддержки `RowViewModel` можем просто указать какого типа у нас будет ячейка
@@ -21,15 +22,30 @@ class HeaderMainCellViewModel: RowViewModel {
     }
 }
 
-class HeaderMainCell: UITableViewCell {
+class HeaderMainCell: BaseTableViewCell {
     // TODO: ADD ANY VIEWS
+    private lazy var cityLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 20)
+        view.textColor = .white
+        return view
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(cityLabel)
+        cityLabel.snp.makeConstraints { $0.center.equalToSuperview() }
+    }
 }
 
 extension HeaderMainCell {
     /// Надо писать в ручную
     /// Можно закрыть протоколом но наверно нет смысла
-    func configure(viewModel _: HeaderMainCellViewModel) {
+    func configure(viewModel: HeaderMainCellViewModel) {
         contentView.backgroundColor = .purple
+        cityLabel.text = viewModel.cityName
+        
         // TODO: CONFIGURE CELL
     }
 }
