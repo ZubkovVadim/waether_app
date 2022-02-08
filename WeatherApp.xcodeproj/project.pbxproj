@@ -39,7 +39,6 @@
 		EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9927B27923002864B5 /* RowViewModel.swift */; };
 		EFC15A9C27B27949002864B5 /* RowViewModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9B27B27949002864B5 /* RowViewModelV2.swift */; };
 		EFC15A9E27B27A32002864B5 /* HeaderMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9D27B27A32002864B5 /* HeaderMainCell.swift */; };
-		EFC15AA127B28425002864B5 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = EFC15AA027B28425002864B5 /* SwiftFormat */; };
 		EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */; };
 		EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */; };
 		EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D133278DD38000AF7C50 /* ViewController.swift */; };
@@ -122,7 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC15A8827B17053002864B5 /* SnapKit in Frameworks */,
-				EFC15AA127B28425002864B5 /* SwiftFormat in Frameworks */,
 				EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */,
 				EF4C0B05279F121300C33A2A /* Moya in Frameworks */,
 			);
@@ -440,7 +438,6 @@
 				EF4C0B04279F121300C33A2A /* Moya */,
 				EF4C0B06279F121300C33A2A /* RealmSwift */,
 				EFC15A8727B17053002864B5 /* SnapKit */,
-				EFC15AA027B28425002864B5 /* SwiftFormat */,
 			);
 			productName = WeatherApp;
 			productReference = EFC4D12C278DD38000AF7C50 /* WeatherApp.app */;
@@ -474,7 +471,6 @@
 				EFC4D143278DD53500AF7C50 /* XCRemoteSwiftPackageReference "Moya" */,
 				EFC4D146278DD5F700AF7C50 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				EFC15A8627B17053002864B5 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */,
 			);
 			productRefGroup = EFC4D12D278DD38000AF7C50 /* Products */;
 			projectDirPath = "";
@@ -632,6 +628,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -686,6 +683,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -782,14 +780,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nicklockwood/SwiftFormat.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.49.0;
-			};
-		};
 		EFC4D143278DD53500AF7C50 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -823,11 +813,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EFC15A8627B17053002864B5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		EFC15AA027B28425002864B5 /* SwiftFormat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */;
-			productName = SwiftFormat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
