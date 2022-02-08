@@ -9,11 +9,11 @@ import CoreLocation
 
 class OnboardingViewPresenter {
     weak var view: OnboardingViewInput?
-    
+
     private let locationManager: LocationManaging
     private let storageService: StorageServing
     private let realmStorage: RealmStoraging
-    
+
     init(
         locationManager: LocationManaging,
         storageService: StorageServing,
@@ -38,11 +38,8 @@ extension OnboardingViewPresenter: LocationManagerOutput {
         view?.presentMain()
         print(location.description)
     }
-    
+
     func didUpdatePermission(status: CLAuthorizationStatus) {
         print(status)
     }
 }
-
-
-

@@ -31,7 +31,15 @@
 		EFC15A8227B1694C002864B5 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A7C27B1694C002864B5 /* Wind.swift */; };
 		EFC15A8527B16C9D002864B5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A8427B16C9D002864B5 /* WeatherAPI.swift */; };
 		EFC15A8827B17053002864B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFC15A8727B17053002864B5 /* SnapKit */; };
-		EFC15A8B27B17242002864B5 /* HeaderMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A8A27B17242002864B5 /* HeaderMainCell.swift */; };
+		EFC15A8B27B17242002864B5 /* HeaderMainCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A8A27B17242002864B5 /* HeaderMainCellV2.swift */; };
+		EFC15A8E27B25D74002864B5 /* UITableView+Architecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A8D27B25D74002864B5 /* UITableView+Architecture.swift */; };
+		EFC15A9027B2767C002864B5 /* UITableView+ArchitectureV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A8F27B2767C002864B5 /* UITableView+ArchitectureV2.swift */; };
+		EFC15A9327B27769002864B5 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9227B27769002864B5 /* IdentifiableView.swift */; };
+		EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9527B277EC002864B5 /* ConfigurableRow.swift */; };
+		EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9927B27923002864B5 /* RowViewModel.swift */; };
+		EFC15A9C27B27949002864B5 /* RowViewModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9B27B27949002864B5 /* RowViewModelV2.swift */; };
+		EFC15A9E27B27A32002864B5 /* HeaderMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A9D27B27A32002864B5 /* HeaderMainCell.swift */; };
+		EFC15AA127B28425002864B5 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = EFC15AA027B28425002864B5 /* SwiftFormat */; };
 		EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */; };
 		EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */; };
 		EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D133278DD38000AF7C50 /* ViewController.swift */; };
@@ -76,7 +84,14 @@
 		EFC15A7B27B1694B002864B5 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		EFC15A7C27B1694C002864B5 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
 		EFC15A8427B16C9D002864B5 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
-		EFC15A8A27B17242002864B5 /* HeaderMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMainCell.swift; sourceTree = "<group>"; };
+		EFC15A8A27B17242002864B5 /* HeaderMainCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMainCellV2.swift; sourceTree = "<group>"; };
+		EFC15A8D27B25D74002864B5 /* UITableView+Architecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Architecture.swift"; sourceTree = "<group>"; };
+		EFC15A8F27B2767C002864B5 /* UITableView+ArchitectureV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ArchitectureV2.swift"; sourceTree = "<group>"; };
+		EFC15A9227B27769002864B5 /* IdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
+		EFC15A9527B277EC002864B5 /* ConfigurableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableRow.swift; sourceTree = "<group>"; };
+		EFC15A9927B27923002864B5 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		EFC15A9B27B27949002864B5 /* RowViewModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModelV2.swift; sourceTree = "<group>"; };
+		EFC15A9D27B27A32002864B5 /* HeaderMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMainCell.swift; sourceTree = "<group>"; };
 		EFC4D12C278DD38000AF7C50 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC4D12F278DD38000AF7C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC4D131278DD38000AF7C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC15A8827B17053002864B5 /* SnapKit in Frameworks */,
+				EFC15AA127B28425002864B5 /* SwiftFormat in Frameworks */,
 				EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */,
 				EF4C0B05279F121300C33A2A /* Moya in Frameworks */,
 			);
@@ -191,9 +207,39 @@
 		EFC15A8927B1722E002864B5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				EFC15A8A27B17242002864B5 /* HeaderMainCell.swift */,
+				EFC15A8A27B17242002864B5 /* HeaderMainCellV2.swift */,
+				EFC15A9D27B27A32002864B5 /* HeaderMainCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		EFC15A8C27B25D4A002864B5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				EFC15A9127B2775B002864B5 /* Architecture */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		EFC15A9127B2775B002864B5 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				EFC15A9227B27769002864B5 /* IdentifiableView.swift */,
+				EFC15A8D27B25D74002864B5 /* UITableView+Architecture.swift */,
+				EFC15A9927B27923002864B5 /* RowViewModel.swift */,
+				EFC15A9427B277D2002864B5 /* ArchitectureV2 */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		EFC15A9427B277D2002864B5 /* ArchitectureV2 */ = {
+			isa = PBXGroup;
+			children = (
+				EFC15A8F27B2767C002864B5 /* UITableView+ArchitectureV2.swift */,
+				EFC15A9527B277EC002864B5 /* ConfigurableRow.swift */,
+				EFC15A9B27B27949002864B5 /* RowViewModelV2.swift */,
+			);
+			path = ArchitectureV2;
 			sourceTree = "<group>";
 		};
 		EFC4D123278DD38000AF7C50 = {
@@ -216,6 +262,7 @@
 		EFC4D12E278DD38000AF7C50 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				EFC15A8C27B25D4A002864B5 /* Utility */,
 				EFC15A7227B168F6002864B5 /* Models */,
 				EF4C0B08279F135300C33A2A /* Appearance */,
 				EFC4D173278F22EC00AF7C50 /* Assembly */,
@@ -314,8 +361,8 @@
 		EFC4D15D278DE28F00AF7C50 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EFC15A8927B1722E002864B5 /* Cells */,
 				EFC4D153278DD91000AF7C50 /* MainViewController.swift */,
+				EFC15A8927B1722E002864B5 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +440,7 @@
 				EF4C0B04279F121300C33A2A /* Moya */,
 				EF4C0B06279F121300C33A2A /* RealmSwift */,
 				EFC15A8727B17053002864B5 /* SnapKit */,
+				EFC15AA027B28425002864B5 /* SwiftFormat */,
 			);
 			productName = WeatherApp;
 			productReference = EFC4D12C278DD38000AF7C50 /* WeatherApp.app */;
@@ -426,6 +474,7 @@
 				EFC4D143278DD53500AF7C50 /* XCRemoteSwiftPackageReference "Moya" */,
 				EFC4D146278DD5F700AF7C50 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				EFC15A8627B17053002864B5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */,
 			);
 			productRefGroup = EFC4D12D278DD38000AF7C50 /* Products */;
 			projectDirPath = "";
@@ -455,20 +504,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC15A9027B2767C002864B5 /* UITableView+ArchitectureV2.swift in Sources */,
 				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
 				EFC15A7627B16913002864B5 /* WeatherResponse.swift in Sources */,
+				EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */,
 				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
 				EFC15A7F27B1694C002864B5 /* Sys.swift in Sources */,
+				EFC15A9327B27769002864B5 /* IdentifiableView.swift in Sources */,
+				EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */,
 				EFC15A7127B16657002864B5 /* TargetType+.swift in Sources */,
-				EFC15A8B27B17242002864B5 /* HeaderMainCell.swift in Sources */,
+				EFC15A8B27B17242002864B5 /* HeaderMainCellV2.swift in Sources */,
 				EFC15A6727B16538002864B5 /* Errors.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EFC15A6F27B165E7002864B5 /* AuthKeys.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
+				EFC15A9C27B27949002864B5 /* RowViewModelV2.swift in Sources */,
 				EFC15A8227B1694C002864B5 /* Wind.swift in Sources */,
 				EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */,
+				EFC15A9E27B27A32002864B5 /* HeaderMainCell.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */,
@@ -485,6 +540,7 @@
 				EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */,
 				EFC15A7427B16904002864B5 /* GeocoderResponse.swift in Sources */,
 				EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */,
+				EFC15A8E27B25D74002864B5 /* UITableView+Architecture.swift in Sources */,
 				EFC4D154278DD91000AF7C50 /* MainViewController.swift in Sources */,
 				EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */,
 				EFC15A7D27B1694C002864B5 /* Clouds.swift in Sources */,
@@ -726,6 +782,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nicklockwood/SwiftFormat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.49.0;
+			};
+		};
 		EFC4D143278DD53500AF7C50 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -759,6 +823,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EFC15A8627B17053002864B5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EFC15AA027B28425002864B5 /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFC15A9F27B28425002864B5 /* XCRemoteSwiftPackageReference "SwiftFormat" */;
+			productName = SwiftFormat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

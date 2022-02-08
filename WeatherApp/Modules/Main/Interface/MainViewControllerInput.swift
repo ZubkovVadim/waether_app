@@ -10,7 +10,7 @@ import Foundation
 protocol MainViewControllerInput: AnyObject {
     // UpdateViews
     func updateWeather(weather: WeatherResponse)
-    
+
     // Navigation
     func presentOnboardingModule()
 }

@@ -18,9 +18,9 @@ protocol LocationManagerOutput: AnyObject {
 
 class LocationManager: NSObject {
     public weak var delegate: LocationManagerOutput?
-    
+
     private let locationManager: CLLocationManager
-    
+
     public private(set) var location: CLLocation? {
         didSet {
             if let location = location {
@@ -28,16 +28,17 @@ class LocationManager: NSObject {
             }
         }
     }
+
     public private(set) var locationStatus = CLAuthorizationStatus.notDetermined {
         didSet {
             delegate?.didUpdatePermission(status: locationStatus)
         }
     }
-    
-    public override init() {
+
+    override public init() {
         locationManager = CLLocationManager()
         super.init()
-        
+
         locationManager.delegate = self
     }
 }
@@ -50,7 +51,7 @@ extension LocationManager: CLLocationManagerDelegate {
             locationManager.requestLocation()
         }
     }
-    
+
     public func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             assertionFailure("Location hasn't updated")

@@ -7,35 +7,35 @@
 
 import Foundation
 
-struct WeatherResponse : Codable {
-    let coord : Coordinate?
-    let weather : [Weather]
-    let base : String?
-    let main : Main?
-    let visibility : Int?
-    let wind : Wind?
-    let clouds : Clouds?
-    let dt : Date?
-    let sys : Sys?
-    let timezone : Int?
-    let id : Int?
-    let name : String?
-    let cod : Int?
+struct WeatherResponse: Codable {
+    let coord: Coordinate?
+    let weather: [Weather]
+    let base: String?
+    let main: Main?
+    let visibility: Int?
+    let wind: Wind?
+    let clouds: Clouds?
+    let dt: Date?
+    let sys: Sys?
+    let timezone: Int?
+    let id: Int?
+    let name: String?
+    let cod: Int?
 
     enum CodingKeys: String, CodingKey {
-        case coord = "coord"
-        case weather = "weather"
-        case base = "base"
-        case main = "main"
-        case visibility = "visibility"
-        case wind = "wind"
-        case clouds = "clouds"
-        case dt = "dt"
-        case sys = "sys"
-        case timezone = "timezone"
-        case id = "id"
-        case name = "name"
-        case cod = "cod"
+        case coord
+        case weather
+        case base
+        case main
+        case visibility
+        case wind
+        case clouds
+        case dt
+        case sys
+        case timezone
+        case id
+        case name
+        case cod
     }
 
     init(from decoder: Decoder) throws {
@@ -55,4 +55,3 @@ struct WeatherResponse : Codable {
         cod = try values.decodeIfPresent(Int.self, forKey: .cod)
     }
 }
-

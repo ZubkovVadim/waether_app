@@ -16,19 +16,19 @@ enum GeocoderAPI: TargetType {
     }
 
     var path: String { "" }
-    
+
     var task: Task {
         switch self {
         case let .getLocation(coordinate):
             let format = [coordinate.longitude, coordinate.latitude]
                 .map { String(describing: $0) }
                 .joined(separator: ",")
-            
+
             return Task.requestParameters(
                 parameters: [
                     "format": "json",
                     "apikey": Constants.Keys.geocoder,
-                    "geocode": format
+                    "geocode": format,
                 ],
                 encoding: URLEncoding.default
             )

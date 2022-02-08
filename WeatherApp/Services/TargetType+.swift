@@ -8,7 +8,7 @@
 import Moya
 
 extension TargetType {
-    var headers: [String : String]? { nil }
+    var headers: [String: String]? { nil }
     var validationType: ValidationType { .successAndRedirectCodes }
     var method: Moya.Method { .get }
 }

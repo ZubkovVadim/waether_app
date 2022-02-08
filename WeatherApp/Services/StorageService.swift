@@ -26,7 +26,7 @@ extension StorageService: StorageServing {
     func isLocationDidRequest() -> Bool {
         defaults.integer(forKey: Keys.locationReqeust.rawValue) > 0
     }
-    
+
     func locationDidRequested() {
         defaults.set(1, forKey: Keys.locationReqeust.rawValue)
     }
