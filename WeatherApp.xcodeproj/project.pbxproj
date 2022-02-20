@@ -16,6 +16,9 @@
 		EF4C0B0E279F207600C33A2A /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B0D279F207600C33A2A /* RealmStorage.swift */; };
 		EF4C0B15279F333F00C33A2A /* RootNavigationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B14279F333F00C33A2A /* RootNavigationViewOutput.swift */; };
 		EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */; };
+		EF87381D27C25B1900799E6A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87381C27C25B1900799E6A /* Fonts.swift */; };
+		EF87381F27C265F100799E6A /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87381E27C265F100799E6A /* Symbols.swift */; };
+		EF87382127C2683800799E6A /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382027C2683800799E6A /* DateFormatter+.swift */; };
 		EFC15A6727B16538002864B5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6627B16538002864B5 /* Errors.swift */; };
 		EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */; };
 		EFC15A6D27B1658B002864B5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6C27B1658B002864B5 /* WeatherService.swift */; };
@@ -69,6 +72,9 @@
 		EF4C0B0D279F207600C33A2A /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		EF4C0B14279F333F00C33A2A /* RootNavigationViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewOutput.swift; sourceTree = "<group>"; };
 		EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewInput.swift; sourceTree = "<group>"; };
+		EF87381C27C25B1900799E6A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EF87381E27C265F100799E6A /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		EF87382027C2683800799E6A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		EFC15A6627B16538002864B5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderAPI.swift; sourceTree = "<group>"; };
 		EFC15A6C27B1658B002864B5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				EF4C0B09279F136F00C33A2A /* ColorPallete.swift */,
+				EF87381C27C25B1900799E6A /* Fonts.swift */,
+				EF87381E27C265F100799E6A /* Symbols.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 			children = (
 				EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */,
 				EFC15A6627B16538002864B5 /* Errors.swift */,
+				EF87382027C2683800799E6A /* DateFormatter+.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,7 +519,9 @@
 				EFC15A7F27B1694C002864B5 /* Sys.swift in Sources */,
 				EFC15A9327B27769002864B5 /* IdentifiableView.swift in Sources */,
 				EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */,
+				EF87381D27C25B1900799E6A /* Fonts.swift in Sources */,
 				EFC15A7127B16657002864B5 /* TargetType+.swift in Sources */,
+				EF87382127C2683800799E6A /* DateFormatter+.swift in Sources */,
 				EFC15A8B27B17242002864B5 /* HeaderMainCellV2.swift in Sources */,
 				EFC15A6727B16538002864B5 /* Errors.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
@@ -526,6 +537,7 @@
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC15A6D27B1658B002864B5 /* WeatherService.swift in Sources */,
 				EFC15A8527B16C9D002864B5 /* WeatherAPI.swift in Sources */,
+				EF87381F27C265F100799E6A /* Symbols.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
 				EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */,
 				EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */,

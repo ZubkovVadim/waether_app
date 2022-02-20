@@ -77,6 +77,20 @@ private extension MainViewPresenter {
     }
     
     func buildHeaderMainCellViewModel(weather: WeatherResponse) -> HeaderMainCellViewModel {
-        HeaderMainCellViewModel(cityName: weather.name, action: { })
+        let todayValue = DateFormatter.string(Date(), format: "HH:mm', 'E dd MMMM")
+        
+        
+        return HeaderMainCellViewModel(
+            minDegrees: "7",
+            maxDegrees: "13",
+            currentDegrees: "13",
+            weatherDescription: "Возможен небольшой дождь",
+            sunsetTime: "19:31",
+            sunriseTime: "05:41",
+            cloudValue: "0",
+            windValue: "3",
+            humidityValue: "75",
+            todayValue: todayValue
+        )
     }
 }

@@ -9,4 +9,8 @@ import UIKit
 
 extension UIColor {
     static let orangeColor = UIColor(named: "orangeColor")
+    
+    static let blueColor = UIColor(named: "blueColor")
+    
+    static let yellowColor = UIColor(red: 0.965, green: 0.867, blue: 0.004, alpha: 1)
 }

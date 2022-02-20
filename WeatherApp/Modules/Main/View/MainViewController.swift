@@ -20,19 +20,16 @@ class MainViewController: BaseViewController {
 
     private lazy var tableView: UITableView = {
         let view = UITableView()
+        view.rowHeight = UITableView.automaticDimension
+        
         view.dataSource = self
+        view.delegate = self
+        
 
         /// Можно использовать, наверно даже лучше, регитрировать их один раз
         view.register(cell: HeaderMainCell.self)
 //        view.register(cell: HeaderMainCellV2.self)
 
-        return view
-    }()
-
-    private lazy var ellipce: UIImageView = {
-        let image = UIImage(named: "main_ellipse")?.withRenderingMode(.alwaysTemplate)
-        let view = UIImageView(image: image)
-        view.tintColor = .red
         return view
     }()
 
@@ -53,17 +50,12 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-
-        view.backgroundColor = .purple
         setupUI()
     }
 
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.left.top.right.bottom.equalToSuperview() }
-
-        view.addSubview(ellipce)
-        ellipce.snp.makeConstraints { $0.center.equalToSuperview() }
     }
 }
 
@@ -91,15 +83,17 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
+        }
+    }
+}
 
-        case let .mainV2(viewModel):
-            return tableView.dequeueConfigurableCell(viewModel: viewModel, for: indexPath)
-            
-        case let .timeWeather(viewModel):
-            let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
-            cell.configure(viewModel: viewModel)
-            
-            return cell
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        let model = dataSource[indexPath.row]
+        
+        switch model {
+        case .header:
+            return 244
         }
     }
 }
@@ -107,10 +101,5 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController {
     enum DataType {
         case header(viewModel: HeaderMainCellViewModel)
-        case timeWeather(viewModel: HeaderMainCellViewModel) // новая viewModel
-//        case daysHeader(viewModel: HeaderMainCellViewModel) // новая viewModel
-//        case dayWeather(viewModel: HeaderMainCellViewModel) // новая viewModel
-        
-        case mainV2(viewModel: HeaderMainCellViewModelV2)
     }
 }
