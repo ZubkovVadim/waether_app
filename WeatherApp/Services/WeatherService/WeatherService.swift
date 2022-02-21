@@ -20,9 +20,10 @@ class WeatherService {
 }
 
 extension WeatherService: WeatherServing {
-    func getCurrentWeather(coordinate: CLLocationCoordinate2D,
-                           completion: @escaping (Result<WeatherResponse, Error>) -> Void)
-    {
+    func getCurrentWeather(
+        coordinate: CLLocationCoordinate2D,
+        completion: @escaping (Result<WeatherResponse, Error>) -> Void
+    ) {
         provider.request(.getCurrent(coordinate: coordinate)) { result in
             switch result {
             case let .success(response):

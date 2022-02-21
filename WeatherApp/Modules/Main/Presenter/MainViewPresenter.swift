@@ -67,6 +67,8 @@ private extension MainViewPresenter {
     }
     
     func updateDataSource(response: WeatherResponse) {
+        view?.updateTitle(response.name)
+        
         // подготовить dataSource для view
         var dataSource: [MainViewController.DataType] = []
         
@@ -84,10 +86,10 @@ private extension MainViewPresenter {
             minDegrees: "7",
             maxDegrees: "13",
             currentDegrees: "13",
-            weatherDescription: "Возможен небольшой дождь",
+            weatherDescription: weather.weather.first?.description,
             sunsetTime: "19:31",
             sunriseTime: "05:41",
-            cloudValue: "0",
+            cloudValue: weather.clouds.all.string,
             windValue: "3",
             humidityValue: "75",
             todayValue: todayValue

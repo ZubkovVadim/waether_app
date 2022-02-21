@@ -14,7 +14,7 @@ class HeaderMainCellViewModel: RowViewModel {
     typealias Cell = HeaderMainCell
     
     let minDegrees, maxDegrees, currentDegrees: String
-    let weatherDescription: String
+    let weatherDescription: String?
     
     let sunsetTime, sunriseTime: String
     let cloudValue, windValue, humidityValue: String
@@ -25,7 +25,7 @@ class HeaderMainCellViewModel: RowViewModel {
         minDegrees: String,
         maxDegrees: String,
         currentDegrees: String,
-        weatherDescription: String,
+        weatherDescription: String?,
         sunsetTime: String,
         sunriseTime: String,
         cloudValue: String,

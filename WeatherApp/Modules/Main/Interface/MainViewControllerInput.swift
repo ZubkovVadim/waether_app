@@ -9,6 +9,7 @@ import Foundation
 
 protocol MainViewControllerInput: AnyObject {
     // UpdateViews
+    func updateTitle(_ title: String?)
     func updateWeather(dataSource: [MainViewController.DataType])
 
     // Navigation

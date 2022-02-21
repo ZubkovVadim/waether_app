@@ -24,9 +24,10 @@ class MainViewController: BaseViewController {
         
         view.dataSource = self
         view.delegate = self
+        view.separatorStyle = .none
         
 
-        /// Можно использовать, наверно даже лучше, регитрировать их один раз
+        /// Можно использовать, наверно даже лучше, регистрировать их один раз
         view.register(cell: HeaderMainCell.self)
 //        view.register(cell: HeaderMainCellV2.self)
 
@@ -60,6 +61,10 @@ class MainViewController: BaseViewController {
 }
 
 extension MainViewController: MainViewControllerInput {
+    func updateTitle(_ title: String?) {
+        navigationItem.title = title
+    }
+    
     func updateWeather(dataSource: [DataType]) {
         self.dataSource = dataSource
     }

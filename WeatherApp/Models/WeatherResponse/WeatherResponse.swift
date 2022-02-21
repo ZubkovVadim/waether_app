@@ -14,7 +14,7 @@ struct WeatherResponse: Codable {
     let main: Main?
     let visibility: Int?
     let wind: Wind?
-    let clouds: Clouds?
+    let clouds: Clouds
     let dt: Date?
     let sys: Sys?
     let timezone: Int?
@@ -46,7 +46,7 @@ struct WeatherResponse: Codable {
         main = try values.decodeIfPresent(Main.self, forKey: .main)
         visibility = try values.decodeIfPresent(Int.self, forKey: .visibility)
         wind = try values.decodeIfPresent(Wind.self, forKey: .wind)
-        clouds = try values.decodeIfPresent(Clouds.self, forKey: .clouds)
+        clouds = try values.decode(Clouds.self, forKey: .clouds)
         dt = try values.decodeIfPresent(Date.self, forKey: .dt)
         sys = try values.decodeIfPresent(Sys.self, forKey: .sys)
         timezone = try values.decodeIfPresent(Int.self, forKey: .timezone)
