@@ -73,25 +73,24 @@ private extension MainViewPresenter {
         var dataSource: [MainViewController.DataType] = []
         
         // Наполнить dataSource
-        dataSource.append(.header(viewModel: buildHeaderMainCellViewModel(weather: response)))
+        dataSource.append(.header(viewModel: buildHeaderMainCellViewModel(weatherResponse: response)))
         
         view?.updateWeather(dataSource: dataSource)
     }
     
-    func buildHeaderMainCellViewModel(weather: WeatherResponse) -> HeaderMainCellViewModel {
-        let todayValue = DateFormatter.string(Date(), format: "HH:mm', 'E dd MMMM")
-        
+    func buildHeaderMainCellViewModel(weatherResponse: WeatherResponse) -> HeaderMainCellViewModel {
+        let todayValue = Date().string(format: "HH:mm', 'E dd MMMM")
         
         return HeaderMainCellViewModel(
-            minDegrees: "7",
-            maxDegrees: "13",
-            currentDegrees: "13",
-            weatherDescription: weather.weather.first?.description,
-            sunsetTime: "19:31",
-            sunriseTime: "05:41",
-            cloudValue: weather.clouds.all.string,
-            windValue: "3",
-            humidityValue: "75",
+            minDegrees: weatherResponse.main.tempMin,
+            maxDegrees: weatherResponse.main.tempMax,
+            currentDegrees: weatherResponse.main.temp,
+            weatherDescription: weatherResponse.weather.first?.description,
+            sunsetTime: weatherResponse.sys.sunset.string(format: "HH:mm"),
+            sunriseTime: weatherResponse.sys.sunrise.string(format: "HH:mm"),
+            cloudValue: weatherResponse.clouds.all.string,
+            windValue: weatherResponse.wind?.speed,
+            humidityValue: weatherResponse.main.humidity,
             todayValue: todayValue
         )
     }

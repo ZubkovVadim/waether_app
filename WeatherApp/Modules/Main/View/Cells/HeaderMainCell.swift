@@ -13,24 +13,26 @@ class HeaderMainCellViewModel: RowViewModel {
     /// Для поддержки `RowViewModel` можем просто указать какого типа у нас будет ячейка
     typealias Cell = HeaderMainCell
     
-    let minDegrees, maxDegrees, currentDegrees: String
+    let minDegrees, maxDegrees, currentDegrees: Double?
     let weatherDescription: String?
     
     let sunsetTime, sunriseTime: String
-    let cloudValue, windValue, humidityValue: String
+    let cloudValue: String
+    let humidityValue: Int?
+    let windValue: Double?
     
     let todayValue: String
     
     init(
-        minDegrees: String,
-        maxDegrees: String,
-        currentDegrees: String,
+        minDegrees: Double?,
+        maxDegrees: Double?,
+        currentDegrees: Double?,
         weatherDescription: String?,
         sunsetTime: String,
         sunriseTime: String,
         cloudValue: String,
-        windValue: String,
-        humidityValue: String,
+        windValue: Double?,
+        humidityValue: Int?,
         todayValue: String
     ) {
         self.minDegrees = minDegrees
@@ -246,23 +248,33 @@ class HeaderMainCell: BaseTableViewCell {
 
 extension HeaderMainCell {
     func configure(viewModel: HeaderMainCellViewModel) {
-        minMaxDegrees.text = [
-            viewModel.minDegrees,
-            String.degreesSymbol,
-            "/",
-            viewModel.maxDegrees,
-            String.degreesSymbol
-        ].joined()
+        if let minTemp = viewModel.minDegrees,
+           let maxTemp = viewModel.maxDegrees {
+            minMaxDegrees.text = String(
+                format: "%.0f" + .degreesSymbol + "/%.0f" + .degreesSymbol,
+                minTemp, maxTemp
+            )
+        }
         
-        currentDegrees.text = viewModel.currentDegrees + String.degreesSymbol
+        if let currentTemp = viewModel.currentDegrees {
+            currentDegrees.text = String(format: "%.0f", currentTemp) + .degreesSymbol
+        }
+
         weatherDescription.text = viewModel.weatherDescription
         
         sunriseLabel.text = viewModel.sunriseTime
         sunsetLabel.text = viewModel.sunsetTime
         
         cloudsLabel.text = viewModel.cloudValue
-        windLabel.text = viewModel.windValue + "м/с"
-        humidityLabel.text = viewModel.humidityValue + "%"
+        
+        if let windValue = viewModel.windValue {
+            windLabel.text = String(format: "%.0f м/с", windValue)
+        }
+        
+        if let humidityValue = viewModel.humidityValue {
+            humidityLabel.text = humidityValue.string + "%"
+        }
+        
         todayLabel.text = viewModel.todayValue
     }
 }

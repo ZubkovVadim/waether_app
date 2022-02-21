@@ -18,7 +18,7 @@
 		EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */; };
 		EF87381D27C25B1900799E6A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87381C27C25B1900799E6A /* Fonts.swift */; };
 		EF87381F27C265F100799E6A /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87381E27C265F100799E6A /* Symbols.swift */; };
-		EF87382127C2683800799E6A /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382027C2683800799E6A /* DateFormatter+.swift */; };
+		EF87382127C2683800799E6A /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382027C2683800799E6A /* Date+.swift */; };
 		EF87382327C2764400799E6A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382227C2764400799E6A /* Int+.swift */; };
 		EFC15A6727B16538002864B5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6627B16538002864B5 /* Errors.swift */; };
 		EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */; };
@@ -75,7 +75,7 @@
 		EF4C0B16279F334700C33A2A /* RootNavigationViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewInput.swift; sourceTree = "<group>"; };
 		EF87381C27C25B1900799E6A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EF87381E27C265F100799E6A /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
-		EF87382027C2683800799E6A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
+		EF87382027C2683800799E6A /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		EF87382227C2764400799E6A /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		EFC15A6627B16538002864B5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderAPI.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			children = (
 				EFC4D156278DDC6F00AF7C50 /* BaseViewController.swift */,
 				EFC15A6627B16538002864B5 /* Errors.swift */,
-				EF87382027C2683800799E6A /* DateFormatter+.swift */,
+				EF87382027C2683800799E6A /* Date+.swift */,
 				EF87382227C2764400799E6A /* Int+.swift */,
 			);
 			path = Helpers;
@@ -524,7 +524,7 @@
 				EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */,
 				EF87381D27C25B1900799E6A /* Fonts.swift in Sources */,
 				EFC15A7127B16657002864B5 /* TargetType+.swift in Sources */,
-				EF87382127C2683800799E6A /* DateFormatter+.swift in Sources */,
+				EF87382127C2683800799E6A /* Date+.swift in Sources */,
 				EFC15A8B27B17242002864B5 /* HeaderMainCellV2.swift in Sources */,
 				EFC15A6727B16538002864B5 /* Errors.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
