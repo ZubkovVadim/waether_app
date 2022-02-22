@@ -74,6 +74,7 @@ private extension MainViewPresenter {
         
         // Наполнить dataSource
         dataSource.append(.header(viewModel: buildHeaderMainCellViewModel(weatherResponse: response)))
+        dataSource.append(.detail24Hours(viewModel: buildMain24HoursViewModel()))
         
         view?.updateWeather(dataSource: dataSource)
     }
@@ -93,5 +94,14 @@ private extension MainViewPresenter {
             humidityValue: weatherResponse.main.humidity,
             todayValue: todayValue
         )
+    }
+    
+    func buildMain24HoursViewModel() -> Main24HoursViewModel {
+        let viewModel = HourDetailWeatherCellViewModel(time: "12:00", skyConditionType: .clear, temp: "13")
+        let dataSource = [HourDetailWeatherCellViewModel](repeating: viewModel, count: 24)
+        
+        return Main24HoursViewModel(dataSource: dataSource) {
+            print("Detail Button Tapped")
+        }
     }
 }

@@ -20,6 +20,8 @@
 		EF87381F27C265F100799E6A /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87381E27C265F100799E6A /* Symbols.swift */; };
 		EF87382127C2683800799E6A /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382027C2683800799E6A /* Date+.swift */; };
 		EF87382327C2764400799E6A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382227C2764400799E6A /* Int+.swift */; };
+		EF87382B27C4152E00799E6A /* HourDetailWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382A27C4152E00799E6A /* HourDetailWeatherCell.swift */; };
+		EF87382E27C4191800799E6A /* Main24HoursTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87382D27C4191800799E6A /* Main24HoursTableCell.swift */; };
 		EFC15A6727B16538002864B5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6627B16538002864B5 /* Errors.swift */; };
 		EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */; };
 		EFC15A6D27B1658B002864B5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC15A6C27B1658B002864B5 /* WeatherService.swift */; };
@@ -77,6 +79,8 @@
 		EF87381E27C265F100799E6A /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		EF87382027C2683800799E6A /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		EF87382227C2764400799E6A /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		EF87382A27C4152E00799E6A /* HourDetailWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourDetailWeatherCell.swift; sourceTree = "<group>"; };
+		EF87382D27C4191800799E6A /* Main24HoursTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main24HoursTableCell.swift; sourceTree = "<group>"; };
 		EFC15A6627B16538002864B5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFC15A6927B1655A002864B5 /* GeocoderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderAPI.swift; sourceTree = "<group>"; };
 		EFC15A6C27B1658B002864B5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		EF87382C27C418DA00799E6A /* 24HoursCell */ = {
+			isa = PBXGroup;
+			children = (
+				EF87382D27C4191800799E6A /* Main24HoursTableCell.swift */,
+				EF87382A27C4152E00799E6A /* HourDetailWeatherCell.swift */,
+			);
+			path = 24HoursCell;
+			sourceTree = "<group>";
+		};
 		EFC15A6827B16550002864B5 /* Geocoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +228,7 @@
 		EFC15A8927B1722E002864B5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EF87382C27C418DA00799E6A /* 24HoursCell */,
 				EFC15A8A27B17242002864B5 /* HeaderMainCellV2.swift */,
 				EFC15A9D27B27A32002864B5 /* HeaderMainCell.swift */,
 			);
@@ -515,6 +529,7 @@
 				EFC15A9027B2767C002864B5 /* UITableView+ArchitectureV2.swift in Sources */,
 				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
 				EFC15A7627B16913002864B5 /* WeatherResponse.swift in Sources */,
+				EF87382B27C4152E00799E6A /* HourDetailWeatherCell.swift in Sources */,
 				EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */,
 				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
@@ -536,6 +551,7 @@
 				EFC15A9E27B27A32002864B5 /* HeaderMainCell.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
+				EF87382E27C4191800799E6A /* Main24HoursTableCell.swift in Sources */,
 				EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC15A6D27B1658B002864B5 /* WeatherService.swift in Sources */,

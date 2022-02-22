@@ -26,18 +26,13 @@ class MainViewController: BaseViewController {
         view.delegate = self
         view.separatorStyle = .none
         
-
-        /// Можно использовать, наверно даже лучше, регистрировать их один раз
         view.register(cell: HeaderMainCell.self)
-//        view.register(cell: HeaderMainCellV2.self)
-
+        view.register(cell: Main24HoursTableCell.self)
         return view
     }()
 
     private var dataSource: [DataType] = [] {
         didSet {
-            /// Можно использовать хак с перегистрацией всех ячеек при изменении dataSource
-//            tableView.register(cells: dataSource.map { $0.identifier })
             tableView.reloadData()
         }
     }
@@ -88,6 +83,10 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
+        case let .detail24Hours(viewModel):
+            let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
         }
     }
 }
@@ -99,6 +98,8 @@ extension MainViewController: UITableViewDelegate {
         switch model {
         case .header:
             return 244
+        case .detail24Hours:
+            return 100
         }
     }
 }
@@ -106,5 +107,6 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController {
     enum DataType {
         case header(viewModel: HeaderMainCellViewModel)
+        case detail24Hours(viewModel: Main24HoursViewModel)
     }
 }
