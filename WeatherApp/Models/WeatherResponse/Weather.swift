@@ -1,23 +1,12 @@
-/*
- Copyright (c) 2022 Swift Models Generated from JSON powered by http://www.json4swift.com
 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
- For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar
-
- */
 
 import Foundation
 
-struct Weather: Codable {
+struct Weather: Decodable {
     let id: Int?
     let main: String?
     let description: String?
-    let icon: String?
+    let icon: IconType
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -31,6 +20,37 @@ struct Weather: Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         main = try values.decodeIfPresent(String.self, forKey: .main)
         description = try values.decodeIfPresent(String.self, forKey: .description)
-        icon = try values.decodeIfPresent(String.self, forKey: .icon)
+        icon = try values.decodeIfPresent(IconType.self, forKey: .icon) ?? .clearDay
+    }
+}
+
+extension Weather {
+    enum IconType: String, Decodable {
+        case clearDay = "01d"
+        case clearNight = "01n"
+        
+        case fewCloudsDay = "02d"
+        case fewCloudsNight = "02n"
+        
+        case cloudsDay = "03d"
+        case cloudsNight = "03n"
+        
+        case brokenCloudsDay = "04d"
+        case brokenCloudsNight = "04n"
+        
+        case snowerRainDay = "09d"
+        case snowerRainNight = "09n"
+        
+        case rainDay = "10d"
+        case rainNight = "10n"
+        
+        case thunderstormDay = "11d"
+        case thunderstormNight = "11n"
+        
+        case snowDay = "13d"
+        case snowNight = "13n"
+        
+        case mistDay = "50d"
+        case mistNight = "50n"
     }
 }

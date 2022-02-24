@@ -32,11 +32,13 @@ class RootNavigationViewController: UINavigationController {
 extension RootNavigationViewController: RootNavigationViewInput {
     func startMain() {
         let module = Assembly.modulesFactory.mainModule()
+        setNavigationBarHidden(false, animated: false)
         setViewControllers([module], animated: false)
     }
 
     func startOnboarding() {
         let module = Assembly.modulesFactory.onboardingModule()
+        setNavigationBarHidden(true, animated: false)
         setViewControllers([module], animated: false)
     }
 }

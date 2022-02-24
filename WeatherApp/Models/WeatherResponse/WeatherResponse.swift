@@ -15,7 +15,7 @@ struct WeatherResponse: Decodable {
     let visibility: Int?
     let wind: Wind?
     let clouds: Clouds
-    let dt: Date?
+    let dt: Date
     let sys: Sys
     let timezone: Int?
     let id: Int?

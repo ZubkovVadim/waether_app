@@ -30,7 +30,7 @@ class OnboardingViewController: BaseViewController {
         view.setTitleColor(.white, for: .normal)
         view.addTarget(self, action: #selector(tapButtonRequest), for: .touchUpInside)
         view.setTitle("ИСПОЛЬЗОВАТЬ МЕСТОПОЛОЖЕНИЕ УСТРОЙСТВА", for: .normal)
-        view.titleLabel!.font = UIFont(name: "Rubik-Regular", size: 12)
+        view.titleLabel?.font = .smallRegular
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,7 +40,7 @@ class OnboardingViewController: BaseViewController {
         view.setTitleColor(.white, for: .normal)
         view.addTarget(self, action: #selector(tapButtonCustom), for: .touchUpInside)
         view.setTitle("НЕТ, Я БУДУ ДОБАВЛЯТЬ ЛОКАЦИИ", for: .normal)
-        view.titleLabel!.font = UIFont(name: "Rubik-Regular", size: 16)
+        view.titleLabel?.font = .regular
         view.titleLabel?.textAlignment = .right
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -133,16 +133,6 @@ class OnboardingViewController: BaseViewController {
             customLocationButton.bottomAnchor.constraint(equalTo: onboardingConteinerView.safeAreaLayoutGuide.bottomAnchor, constant: -12),
         ]
         NSLayoutConstraint.activate(constraints)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     @objc private func tapButtonRequest() {

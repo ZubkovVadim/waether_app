@@ -13,9 +13,13 @@ struct HourDetailWeatherCellViewModel: RowViewModel {
     
     let time: String
     let skyConditionType: SkyConditionType
-    let temp: String
+    let temp: Double?
     
-    init(time: String, skyConditionType: HourDetailWeatherCellViewModel.SkyConditionType, temp: String) {
+    init(
+        time: String,
+        skyConditionType: HourDetailWeatherCellViewModel.SkyConditionType,
+        temp: Double?
+    ) {
         self.time = time
         self.skyConditionType = skyConditionType
         self.temp = temp
@@ -25,6 +29,38 @@ struct HourDetailWeatherCellViewModel: RowViewModel {
 extension HourDetailWeatherCellViewModel {
     enum SkyConditionType {
         case clear, clouds, rain
+        
+        static func from(weatherIcon: Weather.IconType) -> SkyConditionType {
+            switch weatherIcon {
+            case .clearDay, .clearNight:
+                return .clear
+                
+            case .fewCloudsDay, .fewCloudsNight,
+                    .cloudsDay, .cloudsNight,
+                    .brokenCloudsDay,.brokenCloudsNight,
+                    .mistDay, .mistNight:
+                
+                return .clouds
+                
+            case .snowerRainDay, .snowerRainNight,
+                    .rainDay, .rainNight,
+                    .thunderstormDay, .thunderstormNight,
+                    .snowDay, .snowNight:
+                
+                return .rain
+            }
+        }
+        
+        var iconName: String {
+            switch self {
+            case .clear:
+                return "sun_icon"
+            case .clouds:
+                return "color_clouds_icon"
+            case .rain:
+                return "rain_icon"
+            }
+        }
     }
 }
 
@@ -94,8 +130,11 @@ class HourDetailWeatherCell: UICollectionViewCell {
 extension HourDetailWeatherCell {
     func configure(viewModel: HourDetailWeatherCellViewModel) {
         timeLabel.text = viewModel.time
-        iconImage.image = UIImage(named: "sun_icon")
-        tempLabel.text = viewModel.temp + .degreesSymbol
+        iconImage.image = UIImage(named: viewModel.skyConditionType.iconName)
+
+        if let temp = viewModel.temp {
+            tempLabel.text = String(format: "%0.f" + .degreesSymbol, temp)
+        }
     }
 }
 

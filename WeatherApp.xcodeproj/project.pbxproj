@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */; };
+		EF21D17C27C6A222000098E6 /* HoursResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D17327C6A222000098E6 /* HoursResponse.swift */; };
+		EF21D18027C6A222000098E6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D17727C6A222000098E6 /* City.swift */; };
+		EF21D18327C6A4BD000098E6 /* BaseWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */; };
+		EF21D18527C6A4F3000098E6 /* HoursWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */; };
+		EF21D18727C6A81E000098E6 /* Task+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18627C6A81E000098E6 /* Task+.swift */; };
 		EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */; };
 		EF4C0B05279F121300C33A2A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B04279F121300C33A2A /* Moya */; };
 		EF4C0B07279F121300C33A2A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF4C0B06279F121300C33A2A /* RealmSwift */; };
@@ -69,6 +74,11 @@
 
 /* Begin PBXFileReference section */
 		DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		EF21D17327C6A222000098E6 /* HoursResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursResponse.swift; sourceTree = "<group>"; };
+		EF21D17727C6A222000098E6 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWeatherRequest.swift; sourceTree = "<group>"; };
+		EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursWeatherRequest.swift; sourceTree = "<group>"; };
+		EF21D18627C6A81E000098E6 /* Task+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+.swift"; sourceTree = "<group>"; };
 		EF4C0B01279F11C500C33A2A /* RootNavigationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewPresenter.swift; sourceTree = "<group>"; };
 		EF4C0B09279F136F00C33A2A /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		EF4C0B0B279F138F00C33A2A /* GeocoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderService.swift; sourceTree = "<group>"; };
@@ -141,6 +151,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF21D16E27C6A20B000098E6 /* HoursResponse */ = {
+			isa = PBXGroup;
+			children = (
+				EF21D17327C6A222000098E6 /* HoursResponse.swift */,
+				EF21D17727C6A222000098E6 /* City.swift */,
+			);
+			path = HoursResponse;
+			sourceTree = "<group>";
+		};
+		EF21D18127C6A285000098E6 /* SharedResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				EFC15A7827B1694B002864B5 /* Coordinate.swift */,
+				EFC15A7727B1694B002864B5 /* Clouds.swift */,
+			);
+			path = SharedResponseModels;
+			sourceTree = "<group>";
+		};
 		EF4C0B00279F11B700C33A2A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +226,8 @@
 			children = (
 				EFC15A6C27B1658B002864B5 /* WeatherService.swift */,
 				EFC15A8427B16C9D002864B5 /* WeatherAPI.swift */,
+				EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */,
+				EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */,
 			);
 			path = WeatherService;
 			sourceTree = "<group>";
@@ -206,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				EFC15A7327B16904002864B5 /* GeocoderResponse.swift */,
+				EF21D18127C6A285000098E6 /* SharedResponseModels */,
+				EF21D16E27C6A20B000098E6 /* HoursResponse */,
 				EFC15A8327B16A10002864B5 /* WeatherResponse */,
 			);
 			path = Models;
@@ -215,8 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				EFC15A7527B16913002864B5 /* WeatherResponse.swift */,
-				EFC15A7727B1694B002864B5 /* Clouds.swift */,
-				EFC15A7827B1694B002864B5 /* Coordinate.swift */,
 				EFC15A7A27B1694B002864B5 /* Main.swift */,
 				EFC15A7927B1694B002864B5 /* Sys.swift */,
 				EFC15A7B27B1694B002864B5 /* Weather.swift */,
@@ -318,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				EFC15A7027B16657002864B5 /* TargetType+.swift */,
+				EF21D18627C6A81E000098E6 /* Task+.swift */,
 				EFC15A6B27B1657A002864B5 /* WeatherService */,
 				EFC15A6827B16550002864B5 /* Geocoder */,
 				EFC4D171278F1FD200AF7C50 /* LocationManager.swift */,
@@ -530,7 +561,9 @@
 				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
 				EFC15A7627B16913002864B5 /* WeatherResponse.swift in Sources */,
 				EF87382B27C4152E00799E6A /* HourDetailWeatherCell.swift in Sources */,
+				EF21D18527C6A4F3000098E6 /* HoursWeatherRequest.swift in Sources */,
 				EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */,
+				EF21D17C27C6A222000098E6 /* HoursResponse.swift in Sources */,
 				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
@@ -549,6 +582,7 @@
 				EFC15A8227B1694C002864B5 /* Wind.swift in Sources */,
 				EF4C0B02279F11C500C33A2A /* RootNavigationViewPresenter.swift in Sources */,
 				EFC15A9E27B27A32002864B5 /* HeaderMainCell.swift in Sources */,
+				EF21D18027C6A222000098E6 /* City.swift in Sources */,
 				EFC4D15F278DE29A00AF7C50 /* MainViewPresenter.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EF87382E27C4191800799E6A /* Main24HoursTableCell.swift in Sources */,
@@ -559,8 +593,10 @@
 				EF87381F27C265F100799E6A /* Symbols.swift in Sources */,
 				EFC4D132278DD38000AF7C50 /* SceneDelegate.swift in Sources */,
 				EF4C0B0C279F138F00C33A2A /* GeocoderService.swift in Sources */,
+				EF21D18727C6A81E000098E6 /* Task+.swift in Sources */,
 				EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */,
 				EF4C0B15279F333F00C33A2A /* RootNavigationViewOutput.swift in Sources */,
+				EF21D18327C6A4BD000098E6 /* BaseWeatherRequest.swift in Sources */,
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC15A8027B1694C002864B5 /* Main.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,

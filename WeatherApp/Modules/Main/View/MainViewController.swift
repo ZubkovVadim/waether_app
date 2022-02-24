@@ -18,10 +18,13 @@ import UIKit
 class MainViewController: BaseViewController {
     private let presenter: MainViewControllerOutput
 
+    private lazy var refreshControl = UIRefreshControl()
+
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
         
+        view.refreshControl = refreshControl
         view.dataSource = self
         view.delegate = self
         view.separatorStyle = .none
@@ -34,6 +37,7 @@ class MainViewController: BaseViewController {
     private var dataSource: [DataType] = [] {
         didSet {
             tableView.reloadData()
+            updateRefresh()
         }
     }
 
@@ -47,11 +51,16 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         setupUI()
+        updateRefresh()
     }
 
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.left.top.right.bottom.equalToSuperview() }
+    }
+    
+    private func updateRefresh() {
+        dataSource.isEmpty ? refreshControl.beginRefreshing() : refreshControl.endRefreshing()
     }
 }
 
@@ -62,6 +71,13 @@ extension MainViewController: MainViewControllerInput {
     
     func updateWeather(dataSource: [DataType]) {
         self.dataSource = dataSource
+    }
+    
+    func showAlert(error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
+
+        present(alert, animated: true)
     }
 
     func presentOnboardingModule() {
