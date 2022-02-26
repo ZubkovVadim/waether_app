@@ -28,28 +28,28 @@ extension Weather {
     enum IconType: String, Decodable {
         case clearDay = "01d"
         case clearNight = "01n"
-        
+
         case fewCloudsDay = "02d"
         case fewCloudsNight = "02n"
-        
+
         case cloudsDay = "03d"
         case cloudsNight = "03n"
-        
+
         case brokenCloudsDay = "04d"
         case brokenCloudsNight = "04n"
-        
+
         case snowerRainDay = "09d"
         case snowerRainNight = "09n"
-        
+
         case rainDay = "10d"
         case rainNight = "10n"
-        
+
         case thunderstormDay = "11d"
         case thunderstormNight = "11n"
-        
+
         case snowDay = "13d"
         case snowNight = "13n"
-        
+
         case mistDay = "50d"
         case mistNight = "50n"
     }

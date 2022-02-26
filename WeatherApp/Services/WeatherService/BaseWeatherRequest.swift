@@ -14,11 +14,11 @@ class BaseWeatherRequest: Encodable {
     let exclude: [ExcludeParameters] = [.minutely, .alerts]
     let mode: String = "json"
     let lang: String = "ru"
-    
+
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
     }
-    
+
     private enum CodingKeys: String, CodingKey {
         case lat, lon
         case appid
@@ -27,10 +27,10 @@ class BaseWeatherRequest: Encodable {
         case units
         case exclude
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
+
         try container.encode(coordinate.latitude, forKey: .lat)
         try container.encode(coordinate.longitude, forKey: .lon)
         try container.encode(appid, forKey: .appid)
@@ -50,6 +50,3 @@ extension BaseWeatherRequest {
 enum WeatherUnits: String, Encodable {
     case standard, metric, imperial
 }
-
-
-

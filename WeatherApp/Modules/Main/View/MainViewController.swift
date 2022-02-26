@@ -27,18 +27,18 @@ class MainViewController: BaseViewController {
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
-        
+
         view.refreshControl = refreshControl
         view.dataSource = self
         view.delegate = self
         view.separatorStyle = .none
         view.allowsSelection = false
-        
+
         view.register(cell: HeaderMainCell.self)
         view.register(cell: Main24HoursTableCell.self)
         view.register(cell: HeaderDailyLabelCell.self)
         view.register(cell: DayWeatherCell.self)
-        
+
         return view
     }()
 
@@ -67,7 +67,7 @@ class MainViewController: BaseViewController {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.left.top.right.bottom.equalToSuperview() }
     }
-    
+
     @objc private func didRequestRefresh() {
         presenter.didRequestRefresh()
     }
@@ -77,11 +77,11 @@ extension MainViewController: MainViewControllerInput {
     func updateTitle(_ title: String?) {
         navigationItem.title = title
     }
-    
+
     func updateWeather(dataSource: [DataType]) {
         self.dataSource = dataSource
     }
-    
+
     func showAlert(error: Error) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
@@ -125,9 +125,9 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = dataSource[indexPath.row]
-        
+
         switch model {
         case .header:
             return 244

@@ -11,17 +11,17 @@ class DailyWeatherResponse: BaseWeatherResponse {
     let temp: DailyTemp
     /// Probability of precipitation
     let pop: Double
-    
+
     private enum CodingKeys: String, CodingKey {
         case temp
         case pop
     }
-    
+
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         temp = try values.decode(DailyTemp.self, forKey: .temp)
         pop = try values.decode(Double.self, forKey: .pop)
-        
+
         try super.init(from: decoder)
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 struct DayWeatherCellViewModel: RowViewModel {
     typealias Cell = DayWeatherCell
-    
+
     let date: String
     let icon: SkyConditionType
     let rainProbability: Double
@@ -25,7 +25,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.backgroundColor = .lightBlue
         return view
     }()
-    
+
     private lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.font = .regular
@@ -34,7 +34,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.setContentCompressionResistancePriority(.required, for: .horizontal)
         return view
     }()
-    
+
     private lazy var rainProbabilityImage = UIImageView()
     private lazy var rainProbabilityLabel: UILabel = {
         let view = UILabel()
@@ -43,11 +43,10 @@ class DayWeatherCell: BaseTableViewCell {
         view.textAlignment = .center
         return view
     }()
-    
-    
+
     private lazy var rainProbabilityStackView: UIStackView = {
         rainProbabilityImage.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [rainProbabilityImage,
                                                   rainProbabilityLabel])
         view.axis = .horizontal
@@ -55,7 +54,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.spacing = 4
         return view
     }()
-    
+
     private lazy var leftStackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [dateLabel,
                                                   rainProbabilityStackView])
@@ -64,7 +63,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.spacing = 4
         return view
     }()
-    
+
     private lazy var weatherDescription: UILabel = {
         let view = UILabel()
         view.font = .regular
@@ -72,7 +71,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.textAlignment = .left
         return view
     }()
-    
+
     private lazy var minMaxTemp: UILabel = {
         let view = UILabel()
         view.font = .subtitleMedium
@@ -80,7 +79,7 @@ class DayWeatherCell: BaseTableViewCell {
         view.textAlignment = .left
         return view
     }()
-    
+
     override func setupUI() {
         contentView.addSubview(background)
         background.snp.makeConstraints { make in
@@ -89,20 +88,20 @@ class DayWeatherCell: BaseTableViewCell {
             make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-5)
         }
-        
+
         background.addSubview(leftStackView)
         leftStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(6)
             make.left.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-6)
         }
-        
+
         background.addSubview(weatherDescription)
         weatherDescription.snp.makeConstraints { make in
             make.centerY.equalTo(background)
             make.left.equalTo(leftStackView.snp.right).offset(10)
         }
-        
+
         background.addSubview(minMaxTemp)
         minMaxTemp.snp.makeConstraints { make in
             make.centerY.equalTo(background)
@@ -117,9 +116,9 @@ extension DayWeatherCell {
         dateLabel.text = viewModel.date
         rainProbabilityImage.image = UIImage(named: viewModel.icon.iconName)
         rainProbabilityLabel.text = String(format: "%.0f", viewModel.rainProbability) + " %"
-        
+
         weatherDescription.text = viewModel.description?.uppercaseFirst()
-        
+
         if let minTemp = viewModel.minTemp, let maxTemp = viewModel.maxTemp {
             minMaxTemp.text = String(
                 format: "%.0f" + .degreesSymbol + "/%.0f" + .degreesSymbol,

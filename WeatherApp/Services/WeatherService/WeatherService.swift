@@ -25,7 +25,7 @@ extension WeatherService: WeatherServing {
         completion: @escaping (Result<MainWeatherResponse, Error>) -> Void
     ) {
         let model = BaseWeatherRequest(coordinate: coordinate)
-        
+
         provider.request(.getWeather(requestModel: model)) { result in
             switch result {
             case let .success(response):

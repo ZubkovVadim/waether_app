@@ -10,11 +10,11 @@ import UIKit
 
 struct HourDetailWeatherCellViewModel: RowViewModel {
     typealias Cell = HourDetailWeatherCell
-    
+
     let time: String
     let skyConditionType: SkyConditionType
     let temp: Double?
-    
+
     init(
         time: String,
         skyConditionType: SkyConditionType,
@@ -34,7 +34,7 @@ class HourDetailWeatherCell: UICollectionViewCell {
         view.layer.borderColor = UIColor.borderGrayColor.cgColor
         return view
     }()
-    
+
     private lazy var timeLabel: UILabel = {
         let view = UILabel()
         view.font = .smallRegular
@@ -42,20 +42,20 @@ class HourDetailWeatherCell: UICollectionViewCell {
         view.textColor = .textGrayColor
         return view
     }()
-    
+
     private lazy var iconImage: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         return view
     }()
-    
+
     private lazy var tempLabel: UILabel = {
         let view = UILabel()
         view.font = .regular
         view.textAlignment = .center
         return view
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [timeLabel, iconImage, tempLabel])
         view.axis = .vertical
@@ -63,23 +63,23 @@ class HourDetailWeatherCell: UICollectionViewCell {
         view.distribution = .fillProportionally
         return view
     }()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setupUI() {
         contentView.addSubview(mainView)
         mainView.snp.makeConstraints { make in
             make.left.top.right.bottom.equalToSuperview()
         }
-        
+
         mainView.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -99,4 +99,3 @@ extension HourDetailWeatherCell {
         }
     }
 }
-

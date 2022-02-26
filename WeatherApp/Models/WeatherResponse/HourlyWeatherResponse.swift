@@ -9,14 +9,14 @@ import Foundation
 
 class HourlyWeatherResponse: BaseWeatherResponse {
     let temp: Double
-    
+
     /// Probability of precipitation
     let pop: Double?
-    
+
     private enum CodingKeys: String, CodingKey {
         case temp, pop
     }
-    
+
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         temp = try values.decode(Double.self, forKey: .temp)
@@ -24,5 +24,4 @@ class HourlyWeatherResponse: BaseWeatherResponse {
 
         try super.init(from: decoder)
     }
-    
 }

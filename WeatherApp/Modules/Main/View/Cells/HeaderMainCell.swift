@@ -6,23 +6,23 @@
 //
 
 import Foundation
-import UIKit
 import SnapKit
+import UIKit
 
 class HeaderMainCellViewModel: RowViewModel {
     /// Для поддержки `RowViewModel` можем просто указать какого типа у нас будет ячейка
     typealias Cell = HeaderMainCell
-    
+
     let minDegrees, maxDegrees, currentDegrees: Double?
     let weatherDescription: String?
-    
+
     let sunsetTime, sunriseTime: String
     let cloudValue: Double
     let humidityValue: Int
     let windValue: Double
-    
+
     let todayValue: String
-    
+
     init(
         minDegrees: Double?,
         maxDegrees: Double?,
@@ -55,12 +55,12 @@ class HeaderMainCell: BaseTableViewCell {
         view.backgroundColor = .blueColor
         return view
     }()
-    
+
     private lazy var sunlineView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "main_ellipse"))
         return view
     }()
-    
+
     private lazy var contentStackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [topStackView, bottomStackView, todayLabel])
         view.axis = .vertical
@@ -76,7 +76,7 @@ class HeaderMainCell: BaseTableViewCell {
         view.spacing = 5
         return view
     }()
-    
+
     private lazy var minMaxDegrees: UILabel = {
         let view = UILabel()
         view.font = .regular
@@ -84,7 +84,7 @@ class HeaderMainCell: BaseTableViewCell {
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var currentDegrees: UILabel = {
         let view = UILabel()
         view.font = .titleMedium
@@ -92,7 +92,7 @@ class HeaderMainCell: BaseTableViewCell {
         view.textAlignment = .center
         return view
     }()
-    
+
     private lazy var weatherDescription: UILabel = {
         let view = UILabel()
         view.font = .regular
@@ -101,106 +101,105 @@ class HeaderMainCell: BaseTableViewCell {
         view.setContentCompressionResistancePriority(.required, for: .horizontal)
         return view
     }()
-    
+
     private lazy var sunriseLabel: UILabel = {
         let view = UILabel()
         view.font = .captionMedium
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var sunsetLabel: UILabel = {
         let view = UILabel()
         view.font = .captionMedium
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var sunriseStackView: UIStackView = {
         let image = UIImageView(image: UIImage(named: "sunrise_icon"))
         image.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [image, sunriseLabel])
         view.axis = .vertical
         view.distribution = .fillProportionally
         view.spacing = 4
         return view
     }()
-    
+
     private lazy var sunsetStackView: UIStackView = {
         let image = UIImageView(image: UIImage(named: "sunset_icon"))
         image.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [image, sunsetLabel])
         view.axis = .vertical
         view.distribution = .fillProportionally
         view.spacing = 4
         return view
     }()
-    
+
     private lazy var cloudsLabel: UILabel = {
         let view = UILabel()
         view.font = .caption
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var cloudsStackView: UIStackView = {
         let image = UIImageView(image: UIImage(named: "clouds_icon"))
         image.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [image, cloudsLabel])
         view.axis = .horizontal
         view.spacing = 2
         return view
     }()
-    
+
     private lazy var windLabel: UILabel = {
         let view = UILabel()
         view.font = .caption
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var windStackView: UIStackView = {
         let image = UIImageView(image: UIImage(named: "wind_icon"))
         image.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [image, windLabel])
         view.axis = .horizontal
         view.spacing = 2
         return view
     }()
-    
-    
+
     private lazy var humidityLabel: UILabel = {
         let view = UILabel()
         view.font = .caption
         view.textColor = .white
         return view
     }()
-    
+
     private lazy var humidityStackView: UIStackView = {
         let image = UIImageView(image: UIImage(named: "humidity_icon"))
         image.contentMode = .scaleAspectFit
-        
+
         let view = UIStackView(arrangedSubviews: [image, humidityLabel])
         view.axis = .horizontal
         view.spacing = 2
         return view
     }()
-    
+
     private lazy var bottomStackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [cloudsStackView, windStackView, humidityStackView])
         view.axis = .horizontal
         view.distribution = .fillProportionally
         view.spacing = 16
-        
+
         view.snp.makeConstraints { $0.height.equalTo(18) }
-        
+
         return view
     }()
-    
+
     private lazy var todayLabel: UILabel = {
         let view = UILabel()
         view.font = .regular
@@ -208,26 +207,26 @@ class HeaderMainCell: BaseTableViewCell {
         view.textAlignment = .center
         return view
     }()
-    
+
     override func setupUI() {
         contentView.addSubview(background)
         background.snp.makeConstraints { make in
             make.left.top.equalToSuperview().offset(16)
             make.right.bottom.equalToSuperview().offset(-16)
         }
-        
+
         background.addSubview(sunlineView)
         sunlineView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(16)
         }
-        
+
         background.addSubview(contentStackView)
         contentStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(sunlineView).offset(16)
         }
-        
+
         background.addSubview(sunriseStackView)
         sunriseStackView.snp.makeConstraints { make in
             make.top.equalTo(sunlineView.snp.bottom).offset(4)
@@ -235,7 +234,7 @@ class HeaderMainCell: BaseTableViewCell {
             make.left.equalToSuperview().offset(16)
             make.bottom.equalToSuperview().offset(-26)
         }
-        
+
         background.addSubview(sunsetStackView)
         sunsetStackView.snp.makeConstraints { make in
             make.top.equalTo(sunlineView.snp.bottom).offset(4)
@@ -249,27 +248,27 @@ class HeaderMainCell: BaseTableViewCell {
 extension HeaderMainCell {
     func configure(viewModel: HeaderMainCellViewModel) {
         if let minTemp = viewModel.minDegrees,
-           let maxTemp = viewModel.maxDegrees {
+           let maxTemp = viewModel.maxDegrees
+        {
             minMaxDegrees.text = String(
                 format: "%.0f" + .degreesSymbol + "/%.0f" + .degreesSymbol,
                 minTemp, maxTemp
             )
         }
-        
+
         if let currentTemp = viewModel.currentDegrees {
             currentDegrees.text = String(format: "%.0f", currentTemp) + .degreesSymbol
         }
 
         weatherDescription.text = viewModel.weatherDescription?.uppercaseFirst()
-        
+
         sunriseLabel.text = viewModel.sunriseTime
         sunsetLabel.text = viewModel.sunsetTime
-        
+
         cloudsLabel.text = String(format: "%.0f", viewModel.cloudValue)
         windLabel.text = String(format: "%.0f м/с", viewModel.windValue)
         humidityLabel.text = viewModel.humidityValue.string + "%"
-        
-        
+
         todayLabel.text = viewModel.todayValue
     }
 }

@@ -19,7 +19,6 @@ extension UITableView {
     }
 }
 
-
 extension UICollectionView {
     /// Регистрация ячейки по с уникальному `identifier`
     func register<T: IdentifiableView>(cell: T.Type) {
