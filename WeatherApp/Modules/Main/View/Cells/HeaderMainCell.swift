@@ -17,9 +17,9 @@ class HeaderMainCellViewModel: RowViewModel {
     let weatherDescription: String?
     
     let sunsetTime, sunriseTime: String
-    let cloudValue: String
-    let humidityValue: Int?
-    let windValue: Double?
+    let cloudValue: Double
+    let humidityValue: Int
+    let windValue: Double
     
     let todayValue: String
     
@@ -30,9 +30,9 @@ class HeaderMainCellViewModel: RowViewModel {
         weatherDescription: String?,
         sunsetTime: String,
         sunriseTime: String,
-        cloudValue: String,
-        windValue: Double?,
-        humidityValue: Int?,
+        cloudValue: Double,
+        windValue: Double,
+        humidityValue: Int,
         todayValue: String
     ) {
         self.minDegrees = minDegrees
@@ -260,20 +260,15 @@ extension HeaderMainCell {
             currentDegrees.text = String(format: "%.0f", currentTemp) + .degreesSymbol
         }
 
-        weatherDescription.text = viewModel.weatherDescription
+        weatherDescription.text = viewModel.weatherDescription?.uppercaseFirst()
         
         sunriseLabel.text = viewModel.sunriseTime
         sunsetLabel.text = viewModel.sunsetTime
         
-        cloudsLabel.text = viewModel.cloudValue
+        cloudsLabel.text = String(format: "%.0f", viewModel.cloudValue)
+        windLabel.text = String(format: "%.0f м/с", viewModel.windValue)
+        humidityLabel.text = viewModel.humidityValue.string + "%"
         
-        if let windValue = viewModel.windValue {
-            windLabel.text = String(format: "%.0f м/с", windValue)
-        }
-        
-        if let humidityValue = viewModel.humidityValue {
-            humidityLabel.text = humidityValue.string + "%"
-        }
         
         todayLabel.text = viewModel.todayValue
     }

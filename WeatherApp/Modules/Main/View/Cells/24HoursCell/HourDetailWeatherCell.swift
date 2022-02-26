@@ -17,50 +17,12 @@ struct HourDetailWeatherCellViewModel: RowViewModel {
     
     init(
         time: String,
-        skyConditionType: HourDetailWeatherCellViewModel.SkyConditionType,
+        skyConditionType: SkyConditionType,
         temp: Double?
     ) {
         self.time = time
         self.skyConditionType = skyConditionType
         self.temp = temp
-    }
-}
-
-extension HourDetailWeatherCellViewModel {
-    enum SkyConditionType {
-        case clear, clouds, rain
-        
-        static func from(weatherIcon: Weather.IconType) -> SkyConditionType {
-            switch weatherIcon {
-            case .clearDay, .clearNight:
-                return .clear
-                
-            case .fewCloudsDay, .fewCloudsNight,
-                    .cloudsDay, .cloudsNight,
-                    .brokenCloudsDay,.brokenCloudsNight,
-                    .mistDay, .mistNight:
-                
-                return .clouds
-                
-            case .snowerRainDay, .snowerRainNight,
-                    .rainDay, .rainNight,
-                    .thunderstormDay, .thunderstormNight,
-                    .snowDay, .snowNight:
-                
-                return .rain
-            }
-        }
-        
-        var iconName: String {
-            switch self {
-            case .clear:
-                return "sun_icon"
-            case .clouds:
-                return "color_clouds_icon"
-            case .rain:
-                return "rain_icon"
-            }
-        }
     }
 }
 

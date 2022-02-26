@@ -11,6 +11,7 @@ class BaseWeatherRequest: Encodable {
     let coordinate: CLLocationCoordinate2D
     let units: WeatherUnits = .metric
     let appid: String = Constants.Keys.weather
+    let exclude: [ExcludeParameters] = [.minutely, .alerts]
     let mode: String = "json"
     let lang: String = "ru"
     
@@ -24,6 +25,7 @@ class BaseWeatherRequest: Encodable {
         case mode
         case lang
         case units
+        case exclude
     }
     
     func encode(to encoder: Encoder) throws {
@@ -35,10 +37,19 @@ class BaseWeatherRequest: Encodable {
         try container.encode(mode, forKey: .mode)
         try container.encode(lang, forKey: .lang)
         try container.encode(units, forKey: .units)
+        try container.encode(exclude, forKey: .exclude)
+    }
+}
+
+extension BaseWeatherRequest {
+    enum ExcludeParameters: String, Encodable {
+        case current, minutely, hourly, daily, alerts
     }
 }
 
 enum WeatherUnits: String, Encodable {
     case standard, metric, imperial
 }
+
+
 

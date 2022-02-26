@@ -44,7 +44,6 @@ class Main24HoursTableCell: BaseTableViewCell {
         return view
     }()
     
-    
     private lazy var detailButton: UIButton = {
         let view = UIButton(type: .system)
         

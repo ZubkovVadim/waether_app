@@ -18,7 +18,11 @@ import UIKit
 class MainViewController: BaseViewController {
     private let presenter: MainViewControllerOutput
 
-    private lazy var refreshControl = UIRefreshControl()
+    private lazy var refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.addTarget(self, action: #selector(didRequestRefresh), for: .valueChanged)
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
         let view = UITableView()
@@ -28,16 +32,20 @@ class MainViewController: BaseViewController {
         view.dataSource = self
         view.delegate = self
         view.separatorStyle = .none
+        view.allowsSelection = false
         
         view.register(cell: HeaderMainCell.self)
         view.register(cell: Main24HoursTableCell.self)
+        view.register(cell: HeaderDailyLabelCell.self)
+        view.register(cell: DayWeatherCell.self)
+        
         return view
     }()
 
     private var dataSource: [DataType] = [] {
         didSet {
             tableView.reloadData()
-            updateRefresh()
+            refreshControl.endRefreshing()
         }
     }
 
@@ -51,7 +59,8 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         setupUI()
-        updateRefresh()
+
+        refreshControl.beginRefreshing()
     }
 
     private func setupUI() {
@@ -59,8 +68,8 @@ class MainViewController: BaseViewController {
         tableView.snp.makeConstraints { $0.left.top.right.bottom.equalToSuperview() }
     }
     
-    private func updateRefresh() {
-        dataSource.isEmpty ? refreshControl.beginRefreshing() : refreshControl.endRefreshing()
+    @objc private func didRequestRefresh() {
+        presenter.didRequestRefresh()
     }
 }
 
@@ -103,6 +112,14 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
+        case let .headerDaily(viewModel):
+            let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
+        case let .dayWeather(viewModel):
+            let cell = tableView.dequeueReusableCell(viewModel.cellType, for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
         }
     }
 }
@@ -116,6 +133,10 @@ extension MainViewController: UITableViewDelegate {
             return 244
         case .detail24Hours:
             return 100
+        case .headerDaily:
+            return 43
+        case .dayWeather:
+            return 66
         }
     }
 }
@@ -124,5 +145,7 @@ extension MainViewController {
     enum DataType {
         case header(viewModel: HeaderMainCellViewModel)
         case detail24Hours(viewModel: Main24HoursViewModel)
+        case headerDaily(viewModel: HeaderDailyLabelCellViewModel)
+        case dayWeather(viewModel: DayWeatherCellViewModel)
     }
 }

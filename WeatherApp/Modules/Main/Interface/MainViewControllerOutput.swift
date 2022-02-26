@@ -9,4 +9,5 @@ import Foundation
 
 protocol MainViewControllerOutput: AnyObject {
     func viewDidLoad()
+    func didRequestRefresh()
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class MainViewPresenter {
     weak var view: MainViewControllerInput?
-
+    
     private let realmStorage: RealmStoraging
     private let geocoderService: GeocoderServing
     private let weatherService: WeatherServing
-
+    
     init(
         realmStorage: RealmStoraging,
         geocoderService: GeocoderServing,
@@ -30,6 +30,10 @@ extension MainViewPresenter: MainViewControllerOutput {
     func viewDidLoad() {
         loadWeather()
     }
+    
+    func didRequestRefresh() {
+        loadWeather()
+    }
 }
 
 private extension MainViewPresenter {
@@ -38,102 +42,104 @@ private extension MainViewPresenter {
             return
         }
         
-        let dispatchGroup = DispatchGroup()
-        var currentWeather: WeatherResponse?
-        var hoursWeather: HoursResponse?
-        
-        dispatchGroup.enter() // + 1
-        weatherService.getCurrentWeather(coordinate: coordinate) { [weak self] result in
-            dispatchGroup.leave() // - 1
-            
+        weatherService.getWeather(coordinate: coordinate) { [weak self] result in
             switch result {
-            case let .success(response):
-                currentWeather = response
+            case let .success(weather):
+                self?.updateDataSource(weather: weather)
                 
             case let .failure(error):
-                assertionFailure(error.localizedDescription)
                 self?.view?.showAlert(error: error)
             }
-        }
-        
-        dispatchGroup.enter() // + 1
-        weatherService.getDetailHoursWeather(coordinate: coordinate) { [weak self] result in
-            dispatchGroup.leave() // - 1
-            
-            switch result {
-            case let .success(response):
-                hoursWeather = response
-
-            case let .failure(error):
-                assertionFailure(error.localizedDescription)
-                self?.view?.showAlert(error: error)
-            }
-        }
-        
-        
-        dispatchGroup.notify(queue: .main) { [weak self] in
-            // Method will call when dispatchGroup counter is equal == 0
-            // Update Data Source
-            
-            guard let currentWeather = currentWeather,
-                  let hoursWeather = hoursWeather else {
-                      assertionFailure("Data is empty")
-                      return
-                  }
-            
-            self?.updateDataSource(currentWeather: currentWeather, hoursWeather: hoursWeather)
         }
     }
     
-    func updateDataSource(
-        currentWeather: WeatherResponse,
-        hoursWeather: HoursResponse
-    ) {
-        view?.updateTitle(currentWeather.name)
+    func updateDataSource(weather: MainWeatherResponse) {
+        view?.updateTitle(weather.timezone)
         
         // подготовить dataSource для view
         var dataSource: [MainViewController.DataType] = []
         
         // Наполнить dataSource
-        dataSource.append(.header(viewModel: buildHeaderMainCellViewModel(weatherResponse: currentWeather)))
-        dataSource.append(.detail24Hours(viewModel: buildMain24HoursViewModel(hoursWeather: hoursWeather)))
+        if let viewModel = buildHeaderMainCellViewModel(weather: weather) {
+            dataSource.append(.header(viewModel: viewModel))
+        }
+        
+        if let viewModel = buildMain24HoursViewModel(weather: weather) {
+            dataSource.append(.detail24Hours(viewModel: viewModel))
+        }
+        
+        dataSource.append(.headerDaily(viewModel: buildHeaderDailyLabelCellViewModel()))
+        
+        let dayViewModels = buildDailyWeatherCellViewModel(weather: weather)
+        let dataSourceModels = dayViewModels.map { viewModel -> MainViewController.DataType in
+            return .dayWeather(viewModel: viewModel)
+        }
+        
+        dataSource.append(contentsOf: dataSourceModels)
         
         view?.updateWeather(dataSource: dataSource)
     }
     
-    func buildHeaderMainCellViewModel(weatherResponse: WeatherResponse) -> HeaderMainCellViewModel {
+    func buildHeaderMainCellViewModel(weather: MainWeatherResponse) -> HeaderMainCellViewModel? {
+        guard let current = weather.current else {
+            return nil
+        }
+        
         let todayValue = Date().string(format: "HH:mm', 'E dd MMMM")
         
         return HeaderMainCellViewModel(
-            minDegrees: weatherResponse.main.tempMin,
-            maxDegrees: weatherResponse.main.tempMax,
-            currentDegrees: weatherResponse.main.temp,
-            weatherDescription: weatherResponse.weather.first?.description,
-            sunsetTime: weatherResponse.sys.sunset.string(format: "HH:mm"),
-            sunriseTime: weatherResponse.sys.sunrise.string(format: "HH:mm"),
-            cloudValue: weatherResponse.clouds.all.string,
-            windValue: weatherResponse.wind?.speed,
-            humidityValue: weatherResponse.main.humidity,
+            minDegrees: weather.daily.first?.temp.min,
+            maxDegrees: weather.daily.first?.temp.max,
+            currentDegrees: current.temp,
+            weatherDescription: current.weather?.description,
+            sunsetTime: current.sunset.string(format: "HH:mm"),
+            sunriseTime: current.sunrise.string(format: "HH:mm"),
+            cloudValue: current.clouds,
+            windValue: current.windSpeed,
+            humidityValue: current.humidity,
             todayValue: todayValue
         )
     }
     
-    func buildMain24HoursViewModel(hoursWeather: HoursResponse) -> Main24HoursViewModel {
-        let hoursList = hoursWeather.list
+    func buildMain24HoursViewModel(weather: MainWeatherResponse) -> Main24HoursViewModel? {
+        guard !weather.hourly.isEmpty else {
+            return nil
+        }
         
-        let hoursViewModels = hoursList.map { item -> HourDetailWeatherCellViewModel in
+        let hoursViewModels = weather.hourly.map { item -> HourDetailWeatherCellViewModel in
             let time = item.dt.string(format: "HH:mm")
-            let icon = item.weather.first?.icon ?? .clearDay
-
+            let icon = item.weather?.icon ?? .clearDay
+            
             return HourDetailWeatherCellViewModel(
                 time: time,
                 skyConditionType: .from(weatherIcon: icon),
-                temp: item.main.temp
+                temp: item.temp
             )
         }
-
+        
         return Main24HoursViewModel(dataSource: hoursViewModels) {
             print("Detail Button Tapped")
+        }
+    }
+    
+    func buildHeaderDailyLabelCellViewModel() -> HeaderDailyLabelCellViewModel {
+        HeaderDailyLabelCellViewModel {
+            print("Daily Detail Button Tapped")
+        }
+    }
+    
+    func buildDailyWeatherCellViewModel(weather: MainWeatherResponse) -> [DayWeatherCellViewModel] {
+        weather.daily[1 ..< weather.daily.count].map { weatherDay in
+            let icon = weatherDay.weather?.icon ?? .clearDay
+            
+            return DayWeatherCellViewModel(
+                date: weatherDay.dt.string(format: "dd/MM"),
+                icon: .from(weatherIcon: icon),
+                rainProbability: weatherDay.pop,
+                description: weatherDay.weather?.description,
+                minTemp: weatherDay.temp.min,
+                maxTemp: weatherDay.temp.max
+            )
         }
     }
 }

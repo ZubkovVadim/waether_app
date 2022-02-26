@@ -9,8 +9,7 @@ import CoreLocation
 import Moya
 
 enum WeatherAPI: TargetType {
-    case getCurrent(requestModel: BaseWeatherRequest)
-    case getHours(requestModel: HoursWeatherRequest)
+    case getWeather(requestModel: BaseWeatherRequest)
 
     var baseURL: URL {
         URL(string: "https://api.openweathermap.org/data/2.5/")!
@@ -18,18 +17,14 @@ enum WeatherAPI: TargetType {
 
     var path: String {
         switch self {
-        case .getCurrent:
-            return "weather"
-        case .getHours:
-            return "forecast/hourly"
+        case .getWeather:
+            return "onecall"
         }
     }
 
     var task: Task {
         switch self {
-        case let .getCurrent(requestModel):
-            return .requestParameters(encodable: requestModel)
-        case let .getHours(requestModel):
+        case let .getWeather(requestModel):
             return .requestParameters(encodable: requestModel)
         }
     }
