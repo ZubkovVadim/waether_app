@@ -10,6 +10,7 @@ import Foundation
 protocol ModulesFactoring {
     func onboardingModule() -> OnboardingViewController
     func mainModule() -> MainViewController
+    func hoursDetailModule(hourlyWeather: [HourlyWeatherResponse]) -> HoursDetailViewController
 }
 
 class ModulesFactory: ModulesFactoring {
@@ -52,6 +53,15 @@ class ModulesFactory: ModulesFactoring {
         presenter.view = view
         locationManager.delegate = presenter
 
+        return view
+    }
+    
+    func hoursDetailModule(hourlyWeather: [HourlyWeatherResponse]) -> HoursDetailViewController {
+        let presenter = HoursDetailPresenter(hourlyWeather: hourlyWeather)
+        let view = HoursDetailViewController(presenter: presenter)
+        
+        presenter.view = view
+        
         return view
     }
 }

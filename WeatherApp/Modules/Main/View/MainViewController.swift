@@ -32,7 +32,6 @@ class MainViewController: BaseViewController {
         view.dataSource = self
         view.delegate = self
         view.separatorStyle = .none
-        view.allowsSelection = false
 
         view.register(cell: HeaderMainCell.self)
         view.register(cell: Main24HoursTableCell.self)
@@ -92,6 +91,11 @@ extension MainViewController: MainViewControllerInput {
     func presentOnboardingModule() {
         let module = Assembly.modulesFactory.onboardingModule()
         present(module, animated: true)
+    }
+    
+    func presentHoursDetailModule(hourlyWeather: [HourlyWeatherResponse]) {
+        let module = Assembly.modulesFactory.hoursDetailModule(hourlyWeather: hourlyWeather)
+        navigationController?.pushViewController(module, animated: true)
     }
 }
 

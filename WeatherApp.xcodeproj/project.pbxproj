@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DDB551F82799BCFE00DE6B2C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */; };
 		EF21D18327C6A4BD000098E6 /* BaseWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */; };
-		EF21D18527C6A4F3000098E6 /* HoursWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */; };
 		EF21D18727C6A81E000098E6 /* Task+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D18627C6A81E000098E6 /* Task+.swift */; };
 		EF21D19627C91D4D000098E6 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D19527C91D4D000098E6 /* CurrentWeatherResponse.swift */; };
 		EF21D19827C92024000098E6 /* BaseWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF21D19727C92024000098E6 /* BaseWeatherResponse.swift */; };
@@ -71,12 +70,16 @@
 		EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D174278F22F900AF7C50 /* Assembly.swift */; };
 		EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */; };
 		EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */; };
+		EFEC155F27CD596E004DDEB3 /* HoursDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC155E27CD596E004DDEB3 /* HoursDetailViewController.swift */; };
+		EFEC156127CD5983004DDEB3 /* HoursDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156027CD5983004DDEB3 /* HoursDetailPresenter.swift */; };
+		EFEC156327CD5992004DDEB3 /* HoursDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156227CD5992004DDEB3 /* HoursDetailViewInput.swift */; };
+		EFEC156527CD59A4004DDEB3 /* HoursDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156427CD59A4004DDEB3 /* HoursDetailViewOutput.swift */; };
+		EFEC156827CD5F02004DDEB3 /* HoursDetailWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156727CD5F02004DDEB3 /* HoursDetailWeatherCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DDB551F72799BCFE00DE6B2C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWeatherRequest.swift; sourceTree = "<group>"; };
-		EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursWeatherRequest.swift; sourceTree = "<group>"; };
 		EF21D18627C6A81E000098E6 /* Task+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+.swift"; sourceTree = "<group>"; };
 		EF21D19527C91D4D000098E6 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
 		EF21D19727C92024000098E6 /* BaseWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWeatherResponse.swift; sourceTree = "<group>"; };
@@ -137,6 +140,11 @@
 		EFC4D174278F22F900AF7C50 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		EFEC155E27CD596E004DDEB3 /* HoursDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailViewController.swift; sourceTree = "<group>"; };
+		EFEC156027CD5983004DDEB3 /* HoursDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailPresenter.swift; sourceTree = "<group>"; };
+		EFEC156227CD5992004DDEB3 /* HoursDetailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailViewInput.swift; sourceTree = "<group>"; };
+		EFEC156427CD59A4004DDEB3 /* HoursDetailViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailViewOutput.swift; sourceTree = "<group>"; };
+		EFEC156727CD5F02004DDEB3 /* HoursDetailWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailWeatherCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +227,6 @@
 				EFC15A6C27B1658B002864B5 /* WeatherService.swift */,
 				EFC15A8427B16C9D002864B5 /* WeatherAPI.swift */,
 				EF21D18227C6A4BD000098E6 /* BaseWeatherRequest.swift */,
-				EF21D18427C6A4F3000098E6 /* HoursWeatherRequest.swift */,
 			);
 			path = WeatherService;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 		EFC4D14C278DD87E00AF7C50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EFEC155A27CD5933004DDEB3 /* HoursDetail */,
 				EFC4D176278F269900AF7C50 /* Root */,
 				EFC4D152278DD90100AF7C50 /* Main */,
 				EFC4D14E278DD88E00AF7C50 /* Onboarding */,
@@ -374,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				EFC4D160278DE2A800AF7C50 /* Interface */,
+				EFC15A8927B1722E002864B5 /* Cells */,
 				EFC4D15D278DE28F00AF7C50 /* View */,
 				EFC4D15C278DE28900AF7C50 /* Presenter */,
 			);
@@ -412,7 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				EFC4D153278DD91000AF7C50 /* MainViewController.swift */,
-				EFC15A8927B1722E002864B5 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +476,50 @@
 				EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EFEC155A27CD5933004DDEB3 /* HoursDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EFEC156627CD5EEC004DDEB3 /* Cells */,
+				EFEC155D27CD5960004DDEB3 /* View */,
+				EFEC155C27CD595A004DDEB3 /* Presenter */,
+				EFEC155B27CD5950004DDEB3 /* Interface */,
+			);
+			path = HoursDetail;
+			sourceTree = "<group>";
+		};
+		EFEC155B27CD5950004DDEB3 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EFEC156227CD5992004DDEB3 /* HoursDetailViewInput.swift */,
+				EFEC156427CD59A4004DDEB3 /* HoursDetailViewOutput.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		EFEC155C27CD595A004DDEB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EFEC156027CD5983004DDEB3 /* HoursDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EFEC155D27CD5960004DDEB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFEC155E27CD596E004DDEB3 /* HoursDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFEC156627CD5EEC004DDEB3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EFEC156727CD5F02004DDEB3 /* HoursDetailWeatherCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,10 +608,10 @@
 				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
 				EFC15A7627B16913002864B5 /* MainWeatherResponse.swift in Sources */,
 				EF87382B27C4152E00799E6A /* HourDetailWeatherCell.swift in Sources */,
-				EF21D18527C6A4F3000098E6 /* HoursWeatherRequest.swift in Sources */,
 				EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */,
 				EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */,
 				EF21D19C27C92634000098E6 /* HourlyWeatherResponse.swift in Sources */,
+				EFEC156327CD5992004DDEB3 /* HoursDetailViewInput.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
 				EFC15A9327B27769002864B5 /* IdentifiableView.swift in Sources */,
@@ -567,10 +619,13 @@
 				EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */,
 				EF87381D27C25B1900799E6A /* Fonts.swift in Sources */,
 				EFC15A7127B16657002864B5 /* TargetType+.swift in Sources */,
+				EFEC156127CD5983004DDEB3 /* HoursDetailPresenter.swift in Sources */,
 				EF87382127C2683800799E6A /* Date+.swift in Sources */,
 				EFC15A8B27B17242002864B5 /* HeaderMainCellV2.swift in Sources */,
 				EF21D1A327C93430000098E6 /* SkyConditionType.swift in Sources */,
 				EFC15A6727B16538002864B5 /* Errors.swift in Sources */,
+				EFEC156527CD59A4004DDEB3 /* HoursDetailViewOutput.swift in Sources */,
+				EFEC155F27CD596E004DDEB3 /* HoursDetailViewController.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EF21D19E27C92DAC000098E6 /* HeaderDailyLabelCell.swift in Sources */,
 				EFC15A6F27B165E7002864B5 /* AuthKeys.swift in Sources */,
@@ -599,6 +654,7 @@
 				EFC4D151278DD8B200AF7C50 /* OnboardingViewController.swift in Sources */,
 				EFC4D164278DE2EE00AF7C50 /* MainViewControllerOutput.swift in Sources */,
 				EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */,
+				EFEC156827CD5F02004DDEB3 /* HoursDetailWeatherCell.swift in Sources */,
 				EFC15A7427B16904002864B5 /* GeocoderResponse.swift in Sources */,
 				EF4C0B17279F334700C33A2A /* RootNavigationViewInput.swift in Sources */,
 				EFC15A8E27B25D74002864B5 /* UITableView+Architecture.swift in Sources */,

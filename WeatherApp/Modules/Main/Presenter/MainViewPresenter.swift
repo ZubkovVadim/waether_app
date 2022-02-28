@@ -117,8 +117,8 @@ private extension MainViewPresenter {
             )
         }
 
-        return Main24HoursViewModel(dataSource: hoursViewModels) {
-            print("Detail Button Tapped")
+        return Main24HoursViewModel(dataSource: hoursViewModels) { [weak self] in
+            self?.view?.presentHoursDetailModule(hourlyWeather: weather.hourly)
         }
     }
 
