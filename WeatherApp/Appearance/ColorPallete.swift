@@ -20,4 +20,5 @@ extension UIColor {
     static let textGrayColor = UIColor(red: 0.613, green: 0.592, blue: 0.592, alpha: 1)
 
     static let lightTextGray = UIColor(red: 0.604, green: 0.587, blue: 0.587, alpha: 1)
+    static let separatorBlue = UIColor(red: 0.125, green: 0.306, blue: 0.78, alpha: 1)
 }

@@ -10,6 +10,12 @@ import UIKit
 extension UIFont {
     /// "Rubik-Regular", size: 16
     static let regular = UIFont(name: "Rubik-Regular", size: 16) ?? .systemFont(ofSize: 16)
+    
+    /// "Rubik-Regular", size: 18
+    static let titleRegular = UIFont(name: "Rubik-Regular", size: 18) ?? .systemFont(ofSize: 18)
+    
+    /// "Rubik-Regular", size: 30
+    static let bigRegular = UIFont(name: "Rubik-Regular", size: 30) ?? .systemFont(ofSize: 30)
 
     /// "Rubik-Regular", size: 12
     static let smallRegular = UIFont(name: "Rubik-Regular", size: 12) ?? .systemFont(ofSize: 12)

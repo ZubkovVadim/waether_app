@@ -47,7 +47,7 @@ class OnboardingViewController: BaseViewController {
     }()
 
     private var onboardingImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "Frame")!)
+        let image = UIImageView(image: UIImage(named: "onboarding_image")!)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

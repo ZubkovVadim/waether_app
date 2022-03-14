@@ -70,6 +70,13 @@
 		EFC4D175278F22F900AF7C50 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D174278F22F900AF7C50 /* Assembly.swift */; };
 		EFC4D17B278F26C100AF7C50 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */; };
 		EFC4D17E278F2DAA00AF7C50 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */; };
+		EFDF068927DFAB7900FF7D83 /* DailyWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF068827DFAB7900FF7D83 /* DailyWeatherPresenter.swift */; };
+		EFDF068C27DFAB8E00FF7D83 /* DailyWeatherViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF068B27DFAB8E00FF7D83 /* DailyWeatherViewContoller.swift */; };
+		EFDF068F27DFABB100FF7D83 /* DailyWeatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF068E27DFABB100FF7D83 /* DailyWeatherViewInput.swift */; };
+		EFDF069127DFABB800FF7D83 /* DailyWeatherViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF069027DFABB800FF7D83 /* DailyWeatherViewOutput.swift */; };
+		EFDF069427DFAE1100FF7D83 /* DailySelectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF069327DFAE1100FF7D83 /* DailySelectionTableCell.swift */; };
+		EFDF069627DFAEA200FF7D83 /* DayTitleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF069527DFAEA200FF7D83 /* DayTitleCollectionCell.swift */; };
+		EFDF069827DFB72600FF7D83 /* WeatherInformationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF069727DFB72600FF7D83 /* WeatherInformationTableCell.swift */; };
 		EFEC155F27CD596E004DDEB3 /* HoursDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC155E27CD596E004DDEB3 /* HoursDetailViewController.swift */; };
 		EFEC156127CD5983004DDEB3 /* HoursDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156027CD5983004DDEB3 /* HoursDetailPresenter.swift */; };
 		EFEC156327CD5992004DDEB3 /* HoursDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC156227CD5992004DDEB3 /* HoursDetailViewInput.swift */; };
@@ -140,6 +147,13 @@
 		EFC4D174278F22F900AF7C50 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		EFC4D17A278F26C100AF7C50 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		EFC4D17D278F2DAA00AF7C50 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		EFDF068827DFAB7900FF7D83 /* DailyWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherPresenter.swift; sourceTree = "<group>"; };
+		EFDF068B27DFAB8E00FF7D83 /* DailyWeatherViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewContoller.swift; sourceTree = "<group>"; };
+		EFDF068E27DFABB100FF7D83 /* DailyWeatherViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewInput.swift; sourceTree = "<group>"; };
+		EFDF069027DFABB800FF7D83 /* DailyWeatherViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewOutput.swift; sourceTree = "<group>"; };
+		EFDF069327DFAE1100FF7D83 /* DailySelectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySelectionTableCell.swift; sourceTree = "<group>"; };
+		EFDF069527DFAEA200FF7D83 /* DayTitleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTitleCollectionCell.swift; sourceTree = "<group>"; };
+		EFDF069727DFB72600FF7D83 /* WeatherInformationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformationTableCell.swift; sourceTree = "<group>"; };
 		EFEC155E27CD596E004DDEB3 /* HoursDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailViewController.swift; sourceTree = "<group>"; };
 		EFEC156027CD5983004DDEB3 /* HoursDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailPresenter.swift; sourceTree = "<group>"; };
 		EFEC156227CD5992004DDEB3 /* HoursDetailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursDetailViewInput.swift; sourceTree = "<group>"; };
@@ -338,6 +352,7 @@
 		EFC4D14C278DD87E00AF7C50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EFDF068627DFAB5700FF7D83 /* DailyWeather */,
 				EFEC155A27CD5933004DDEB3 /* HoursDetail */,
 				EFC4D176278F269900AF7C50 /* Root */,
 				EFC4D152278DD90100AF7C50 /* Main */,
@@ -478,6 +493,52 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EFDF068627DFAB5700FF7D83 /* DailyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				EFDF069227DFADF900FF7D83 /* Cells */,
+				EFDF068D27DFABA600FF7D83 /* Interfaces */,
+				EFDF068A27DFAB7C00FF7D83 /* View */,
+				EFDF068727DFAB6E00FF7D83 /* Presenter */,
+			);
+			path = DailyWeather;
+			sourceTree = "<group>";
+		};
+		EFDF068727DFAB6E00FF7D83 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EFDF068827DFAB7900FF7D83 /* DailyWeatherPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EFDF068A27DFAB7C00FF7D83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFDF068B27DFAB8E00FF7D83 /* DailyWeatherViewContoller.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFDF068D27DFABA600FF7D83 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				EFDF068E27DFABB100FF7D83 /* DailyWeatherViewInput.swift */,
+				EFDF069027DFABB800FF7D83 /* DailyWeatherViewOutput.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		EFDF069227DFADF900FF7D83 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EFDF069327DFAE1100FF7D83 /* DailySelectionTableCell.swift */,
+				EFDF069527DFAEA200FF7D83 /* DayTitleCollectionCell.swift */,
+				EFDF069727DFB72600FF7D83 /* WeatherInformationTableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EFEC155A27CD5933004DDEB3 /* HoursDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +667,7 @@
 			files = (
 				EFC15A9027B2767C002864B5 /* UITableView+ArchitectureV2.swift in Sources */,
 				EF4C0B0A279F136F00C33A2A /* ColorPallete.swift in Sources */,
+				EFDF069827DFB72600FF7D83 /* WeatherInformationTableCell.swift in Sources */,
 				EFC15A7627B16913002864B5 /* MainWeatherResponse.swift in Sources */,
 				EF87382B27C4152E00799E6A /* HourDetailWeatherCell.swift in Sources */,
 				EFC15A9627B277EC002864B5 /* ConfigurableRow.swift in Sources */,
@@ -614,7 +676,9 @@
 				EFEC156327CD5992004DDEB3 /* HoursDetailViewInput.swift in Sources */,
 				EFC4D170278F1DD500AF7C50 /* OnboardingViewOutput.swift in Sources */,
 				EFC4D172278F1FD200AF7C50 /* LocationManager.swift in Sources */,
+				EFDF068C27DFAB8E00FF7D83 /* DailyWeatherViewContoller.swift in Sources */,
 				EFC15A9327B27769002864B5 /* IdentifiableView.swift in Sources */,
+				EFDF068927DFAB7900FF7D83 /* DailyWeatherPresenter.swift in Sources */,
 				EF21D19627C91D4D000098E6 /* CurrentWeatherResponse.swift in Sources */,
 				EFC15A9A27B27923002864B5 /* RowViewModel.swift in Sources */,
 				EF87381D27C25B1900799E6A /* Fonts.swift in Sources */,
@@ -628,6 +692,7 @@
 				EFEC155F27CD596E004DDEB3 /* HoursDetailViewController.swift in Sources */,
 				EFC4D15B278DDCC400AF7C50 /* ModulesFactory.swift in Sources */,
 				EF21D19E27C92DAC000098E6 /* HeaderDailyLabelCell.swift in Sources */,
+				EFDF069627DFAEA200FF7D83 /* DayTitleCollectionCell.swift in Sources */,
 				EFC15A6F27B165E7002864B5 /* AuthKeys.swift in Sources */,
 				EF21D19A27C92082000098E6 /* DailyWeatherResponse.swift in Sources */,
 				EFC4D134278DD38000AF7C50 /* ViewController.swift in Sources */,
@@ -638,6 +703,9 @@
 				EF21D1A027C930B0000098E6 /* DayWeatherCell.swift in Sources */,
 				EFC4D16B278F1D8800AF7C50 /* OnboardingViewPresenter.swift in Sources */,
 				EF87382E27C4191800799E6A /* Main24HoursTableCell.swift in Sources */,
+				EFDF068F27DFABB100FF7D83 /* DailyWeatherViewInput.swift in Sources */,
+				EFDF069427DFAE1100FF7D83 /* DailySelectionTableCell.swift in Sources */,
+				EFDF069127DFABB800FF7D83 /* DailyWeatherViewOutput.swift in Sources */,
 				EFC15A6A27B1655A002864B5 /* GeocoderAPI.swift in Sources */,
 				EFC4D130278DD38000AF7C50 /* AppDelegate.swift in Sources */,
 				EFC15A6D27B1658B002864B5 /* WeatherService.swift in Sources */,

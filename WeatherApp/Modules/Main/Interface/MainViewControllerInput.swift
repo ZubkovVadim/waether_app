@@ -18,4 +18,5 @@ protocol MainViewControllerInput: AnyObject {
     // Navigation
     func presentOnboardingModule()
     func presentHoursDetailModule(hourlyWeather: [HourlyWeatherResponse])
+    func presentDailyWeatherModule(dailyWeathers: [DailyWeatherResponse])
 }

@@ -15,10 +15,10 @@ class BaseWeatherResponse: Decodable {
     let pressure: Double
     let clouds: Double
     let windSpeed: Double
+    let uvi: Double
 
     // Unused now
     let dew_point: Double?
-    let uvi: Double?
     let visibility: Int?
     let windDeg: Int?
 
@@ -42,7 +42,7 @@ class BaseWeatherResponse: Decodable {
 
         pressure = try values.decode(Double.self, forKey: .pressure)
         humidity = try values.decode(Int.self, forKey: .humidity)
-
+        uvi = try values.decode(Double.self, forKey: .uvi)
         clouds = try values.decode(Double.self, forKey: .clouds)
         windSpeed = try values.decode(Double.self, forKey: .wind_speed)
 
@@ -51,7 +51,7 @@ class BaseWeatherResponse: Decodable {
 
         visibility = try values.decodeIfPresent(Int.self, forKey: .visibility)
         dew_point = try values.decodeIfPresent(Double.self, forKey: .dew_point)
-        uvi = try values.decodeIfPresent(Double.self, forKey: .uvi)
+        
         windDeg = try values.decodeIfPresent(Int.self, forKey: .wind_deg)
     }
 }

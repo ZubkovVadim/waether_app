@@ -68,7 +68,9 @@ private extension MainViewPresenter {
             dataSource.append(.detail24Hours(viewModel: viewModel))
         }
 
-        dataSource.append(.headerDaily(viewModel: buildHeaderDailyLabelCellViewModel()))
+        dataSource.append(
+            .headerDaily(viewModel: buildHeaderDailyLabelCellViewModel(weather: weather))
+        )
 
         let dayViewModels = buildDailyWeatherCellViewModel(weather: weather)
         let dataSourceModels = dayViewModels.map { viewModel -> MainViewController.DataType in
@@ -122,9 +124,9 @@ private extension MainViewPresenter {
         }
     }
 
-    func buildHeaderDailyLabelCellViewModel() -> HeaderDailyLabelCellViewModel {
-        HeaderDailyLabelCellViewModel {
-            print("Daily Detail Button Tapped")
+    func buildHeaderDailyLabelCellViewModel(weather: MainWeatherResponse) -> HeaderDailyLabelCellViewModel {
+        HeaderDailyLabelCellViewModel { [weak self] in
+            self?.view?.presentDailyWeatherModule(dailyWeathers: weather.daily)
         }
     }
 

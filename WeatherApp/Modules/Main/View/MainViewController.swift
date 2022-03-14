@@ -97,6 +97,11 @@ extension MainViewController: MainViewControllerInput {
         let module = Assembly.modulesFactory.hoursDetailModule(hourlyWeather: hourlyWeather)
         navigationController?.pushViewController(module, animated: true)
     }
+    
+    func presentDailyWeatherModule(dailyWeathers: [DailyWeatherResponse]) {
+        let module = Assembly.modulesFactory.dailyWeatherModule(dailyWeathers: dailyWeathers)
+        navigationController?.pushViewController(module, animated: true)
+    }
 }
 
 extension MainViewController: UITableViewDataSource {

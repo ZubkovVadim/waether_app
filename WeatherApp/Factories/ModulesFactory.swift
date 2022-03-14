@@ -11,6 +11,7 @@ protocol ModulesFactoring {
     func onboardingModule() -> OnboardingViewController
     func mainModule() -> MainViewController
     func hoursDetailModule(hourlyWeather: [HourlyWeatherResponse]) -> HoursDetailViewController
+    func dailyWeatherModule(dailyWeathers: [DailyWeatherResponse]) -> DailyWeatherViewContoller
 }
 
 class ModulesFactory: ModulesFactoring {
@@ -59,6 +60,15 @@ class ModulesFactory: ModulesFactoring {
     func hoursDetailModule(hourlyWeather: [HourlyWeatherResponse]) -> HoursDetailViewController {
         let presenter = HoursDetailPresenter(hourlyWeather: hourlyWeather)
         let view = HoursDetailViewController(presenter: presenter)
+        
+        presenter.view = view
+        
+        return view
+    }
+    
+    func dailyWeatherModule(dailyWeathers: [DailyWeatherResponse]) -> DailyWeatherViewContoller {
+        let presenter = DailyWeatherPresenter(dailyWeathers: dailyWeathers)
+        let view = DailyWeatherViewContoller(presenter: presenter)
         
         presenter.view = view
         
