@@ -54,7 +54,7 @@ class OnboardingViewController: BaseViewController {
 
     private var onboardingStackView: UIStackView = {
         let view = UIStackView()
-        view.axis = NSLayoutConstraint.Axis.vertical
+        view.axis = .vertical
         view.spacing = 30
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -64,7 +64,7 @@ class OnboardingViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(red: 0.973, green: 0.961, blue: 0.961, alpha: 1)
-        label.font = UIFont(name: "Rubik-Regular", size: 16)
+        label.font = .regular
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.text = "Разрешить приложению  Weather использовать данные о местоположении вашего устройства"
@@ -76,9 +76,7 @@ class OnboardingViewController: BaseViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Чтобы получить более точные прогнозы погоды во время движения или путешествия \n\nВы можете изменить свой выбор в любое время из меню приложения"
         label.textColor = .white
-        label.font = UIFont(name: "Rubik", size: 14)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.font = .caption
         return label
     }()
 
@@ -90,8 +88,9 @@ class OnboardingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "blueColor")
+        view.backgroundColor = .blueColor
         view.addSubview(onboardingScrollView)
+
         onboardingScrollView.addSubview(onboardingConteinerView)
         onboardingConteinerView.addSubview(onboardingImage)
         onboardingConteinerView.addSubview(onboardingStackView)
